@@ -2,14 +2,18 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://mamboer.github.com/blog/archives/</loc>
-        <lastmod>2013-02-23T15:53:11+08:00</lastmod>
+        <lastmod>2013-02-23T16:50:37+08:00</lastmod>
     </url>
     <url>
         <loc>http://mamboer.github.com/</loc>
-        <lastmod>2013-02-23T15:53:11+08:00</lastmod>
+        <lastmod>2013-02-23T16:50:37+08:00</lastmod>
     </url>
     <url>
         <loc>http://mamboer.github.com/robots.txt</loc>
         <lastmod>2013-02-23T15:53:11+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mamboer.github.com/search.html</loc>
+        <lastmod>2013-02-23T16:50:37+08:00</lastmod>
     </url>
 </urlset>
