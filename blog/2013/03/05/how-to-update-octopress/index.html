@@ -3,11 +3,17 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Lv's Gene</title>
+	<title>How to update octopress - Lv's Gene</title>
 	<meta name="author" content="levinwong">
 
 	
-	<meta name="description" content="Search Results $('#search_results').tapir({ 'token': '', 'complete' : function() { document.getElementById('search_loading').style.display="none &hellip;">
+	<meta name="description" content="如何更新本地的octopress框架呢？ 1
+2
+3
+4
+git pull octopress master # Get the lastest ocopress
+bundle install # Keep gems updated
+rake update_source # Update the &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -81,21 +87,84 @@
 			<div class="span12">
 				<section id="content" class="inner">
 					<div class="inner_bg"></div>
-					<div class="inner_bd"><h1 class="entry-title"><center>Search Results</center></h1>
-<div id="search_loading" style="margin: 40px 0">
-    <center><img src="/images/loading.gif"></center>
+					<div class="inner_bd"><article class="post">
+	<h2 class="title">How to Update Octopress</h2>
+	<div class="entry-content"><h3>如何更新本地的octopress框架呢？</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git pull octopress master <span class="c"># Get the lastest ocopress</span>
+</span><span class='line'>bundle install            <span class="c"># Keep gems updated</span>
+</span><span class='line'>rake update_source        <span class="c"># Update the template&#39;s source</span>
+</span><span class='line'>rake update_style         <span class="c"># Update the template&#39;s style</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--more-->
+
+
+<p>完整的更新说明请参考这个文档<a href="http://octopress.org/docs/updating/" title="Updating Octopress">Updating Octopress</a></p>
+
+<p>有一个点需要注意的:</p>
+
+<blockquote><p>如果你使用的是第三方的theme，最后两行rake命令就不用执行了！！否则本地的主题会被官方主题覆盖掉！</p></blockquote>
+</div>
+	<div class="duoshuo-wrap"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"faso"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = 'http://static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!-- Duoshuo Comment END --></div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-05T15:13:00+08:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/webdev/'>WebDev</a>
+
+
+</div>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
-<script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
-<div id="search_results" style="display:none">
-<br>
-</div>
-<script>
-         $('#search_results').tapir({
-             'token': '',
-             'complete' : function() { document.getElementById('search_loading').style.display="none"; }
-         });
-</script>
 
 </div>
 				</section>
