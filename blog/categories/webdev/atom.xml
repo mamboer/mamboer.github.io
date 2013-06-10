@@ -4,7 +4,7 @@
   <title><![CDATA[Category: WebDev | FASO - 我们有病在发烧!]]></title>
   <link href="http://mamboer.github.com/blog/categories/webdev/atom.xml" rel="self"/>
   <link href="http://mamboer.github.com/"/>
-  <updated>2013-06-11T00:41:17+08:00</updated>
+  <updated>2013-06-11T00:52:15+08:00</updated>
   <id>http://mamboer.github.com/</id>
   <author>
     <name><![CDATA[levinwong]]></name>
@@ -67,7 +67,7 @@ gem update bundler
     <id>http://mamboer.github.com/blog/2013/03/04/sublime-text-markdown-preview-plugin</id>
     <content type="html"><![CDATA[<h3>Sublime text markdown文档预览插件</h3>
 
-<p>和大家分享下这个插件<a href="https://github.com/revolunet/sublimetext-markdown-preview">SublimeText 2 MarkDown preview</a>，很好用！支持<a href="http://github.github.com/github-flavored-markdown/" title="Github flavored markdown">GFM</a>,我自己的博客文章就是使用这个插件写的。{% emoji smile %}</p>
+<p>和大家分享下这个插件<a href="https://github.com/revolunet/sublimetext-markdown-preview">SublimeText 2 MarkDown preview</a>，很好用！支持<a href="http://github.github.com/github-flavored-markdown/" title="Github flavored markdown">GFM</a>,我自己的博客文章就是使用这个插件写的。<i class='emoji smile'></i></p>
 
 <blockquote><p>另外，如果你parser配置里面用的是github，那么就可以用各种<a href="http://www.emoji-cheat-sheet.com/" title="emoji表情">emoji表情</a>了！！</p></blockquote>
 
@@ -383,7 +383,7 @@ Violets are blue</p>
 
 <p>These are dangerous goodies though, and we need to make sure email addresses don&rsquo;t get mangled:</p>
 
-<p>My email addy is <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x74;&#111;&#109;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;&#46;">&#116;&#111;&#x6d;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;&#46;</a></p>
+<p>My email addy is <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x74;&#x6f;&#109;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;&#46;">&#116;&#x6f;&#109;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;&#46;</a></p>
 
 <h2>Math is hard, let&rsquo;s go shopping</h2>
 

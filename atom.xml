@@ -4,7 +4,7 @@
   <title><![CDATA[FASO - 我们有病在发烧!]]></title>
   <link href="http://mamboer.github.com/atom.xml" rel="self"/>
   <link href="http://mamboer.github.com/"/>
-  <updated>2013-06-11T00:41:14+08:00</updated>
+  <updated>2013-06-11T00:52:15+08:00</updated>
   <id>http://mamboer.github.com/</id>
   <author>
     <name><![CDATA[levinwong]]></name>
@@ -632,7 +632,7 @@ Violets are blue</p>
 
 <p>These are dangerous goodies though, and we need to make sure email addresses don&rsquo;t get mangled:</p>
 
-<p>My email addy is <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x74;&#x6f;&#109;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#x6d;&#46;">&#x74;&#x6f;&#x6d;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;&#x2e;</a></p>
+<p>My email addy is <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#116;&#111;&#x6d;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;&#46;">&#x74;&#111;&#x6d;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#109;&#x2e;</a></p>
 
 <h2>Math is hard, let&rsquo;s go shopping</h2>
 
@@ -791,55 +791,65 @@ as I should be in coming up with one.</p></blockquote>
 
 <h3>常用重要的命令</h3>
 
-<ol>
-<li><h4>生成静态文档</h4>
+<h4>生成静态文档</h4>
 
-<p> <code>sh
- $ rake generate
-</code></p></li>
-<li><h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake generate
+</span></code></pre></td></tr></table></div></figure>
 
-<p> <code>sh
- $ rake preview
-</code></p></li>
-<li><h4>部署到github</h4>
 
-<p> <code>sh
- $ rake deploy
-</code></p></li>
-<li><h4>部署完毕后提交source分支</h4>
+<h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
 
-<p> <code>sh
- $ git add .
- $ git commit -m "commit msg"
- $ git push origin source
-</code></p></li>
-<li><h4>创建新文章YYYY-MM-DD-hello-world.markdown</h4>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake preview
+</span></code></pre></td></tr></table></div></figure>
 
-<p> <code>sh
- $ rake new_post['hello world']
-</code></p>
 
-<p> 相关链接:</p>
+<h4>部署到github</h4>
 
-<ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax" title="markdown语法">markdown语法</a></li>
-<li><a href="https://help.github.com/articles/github-flavored-markdown" title="GitHub Flavored Markdown">GFM</a></li>
-<li><a href="http://faso.me/blog/2013/03/04/sublime-text-markdown-preview-plugin/" title="Sublime text markdown文档预览插件">Sublime text markdown文档预览插件</a></li>
-</ul>
-</li>
-<li><h4>更新主题.themes/xxx</h4>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake deploy
+</span></code></pre></td></tr></table></div></figure>
 
-<p> <code>sh
- $ rake update_source['xxx']
- $ rake update_style['xxx']
-</code></p></li>
-<li><h4>查看更多rake 命令</h4>
 
-<p> <code>sh
- $ rake -T
-</code></p></li>
-</ol>
+<h4>部署完毕后提交source分支</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commit -m <span class="s2">&quot;commit msg&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>创建新文章YYYY-MM-DD-hello-world.markdown</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake new_post<span class="o">[</span><span class="s1">&#39;hello world&#39;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>相关链接: 
+* [markdown语法](http://daringfireball.net/projects/markdown/syntax "markdown语法")
+* [GFM](https://help.github.com/articles/github-flavored-markdown "GitHub Flavored Markdown")
+* [Sublime text markdown文档预览插件](http://faso.me/blog/2013/03/04/sublime-text-markdown-preview-plugin/ "Sublime text markdown文档预览插件")
+</code></pre>
+
+<h4>更新主题.themes/xxx</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake update_source<span class="o">[</span><span class="s1">&#39;xxx&#39;</span><span class="o">]</span>
+</span><span class='line'><span class="nv">$ </span>rake update_style<span class="o">[</span><span class="s1">&#39;xxx&#39;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>查看更多rake 命令</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake -T
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>常见问题</h3>

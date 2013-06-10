@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Life | FASO - 我们有病在发烧!]]></title>
   <link href="http://mamboer.github.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://mamboer.github.com/"/>
-  <updated>2013-06-11T00:41:17+08:00</updated>
+  <updated>2013-06-11T00:52:15+08:00</updated>
   <id>http://mamboer.github.com/</id>
   <author>
     <name><![CDATA[levinwong]]></name>
@@ -83,56 +83,56 @@ username.github.com$
 
 <h3>常用重要的命令</h3>
 
-<ol>
-<li><h4>生成静态文档</h4>
+<h4>生成静态文档</h4>
 
-<p> <code>sh
- $ rake generate
-</code></p></li>
-<li><h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
-
-<p> <code>sh
- $ rake preview
-</code></p></li>
-<li><h4>部署到github</h4>
-
-<p> <code>sh
- $ rake deploy
-</code></p></li>
-<li><h4>部署完毕后提交source分支</h4>
-
-<p> <code>sh
- $ git add .
- $ git commit -m "commit msg"
- $ git push origin source
-</code></p></li>
-<li><h4>创建新文章YYYY-MM-DD-hello-world.markdown</h4>
-
-<p> <code>sh
- $ rake new_post['hello world']
+<p><code>bash
+$ rake generate
 </code></p>
 
-<p> 相关链接:</p>
+<h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
 
-<ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax" title="markdown语法">markdown语法</a></li>
-<li><a href="https://help.github.com/articles/github-flavored-markdown" title="GitHub Flavored Markdown">GFM</a></li>
-<li><a href="http://faso.me/blog/2013/03/04/sublime-text-markdown-preview-plugin/" title="Sublime text markdown文档预览插件">Sublime text markdown文档预览插件</a></li>
-</ul>
-</li>
-<li><h4>更新主题.themes/xxx</h4>
+<p><code>bash
+$ rake preview
+</code></p>
 
-<p> <code>sh
- $ rake update_source['xxx']
- $ rake update_style['xxx']
-</code></p></li>
-<li><h4>查看更多rake 命令</h4>
+<h4>部署到github</h4>
 
-<p> <code>sh
- $ rake -T
-</code></p></li>
-</ol>
+<p><code>bash
+$ rake deploy
+</code></p>
 
+<h4>部署完毕后提交source分支</h4>
+
+<p><code>bash
+$ git add .
+$ git commit -m "commit msg"
+$ git push origin source
+</code></p>
+
+<h4>创建新文章YYYY-MM-DD-hello-world.markdown</h4>
+
+<p><code>bash
+$ rake new_post['hello world']
+</code></p>
+
+<pre><code>相关链接: 
+* [markdown语法](http://daringfireball.net/projects/markdown/syntax "markdown语法")
+* [GFM](https://help.github.com/articles/github-flavored-markdown "GitHub Flavored Markdown")
+* [Sublime text markdown文档预览插件](http://faso.me/blog/2013/03/04/sublime-text-markdown-preview-plugin/ "Sublime text markdown文档预览插件")
+</code></pre>
+
+<h4>更新主题.themes/xxx</h4>
+
+<p><code>bash
+$ rake update_source['xxx']
+$ rake update_style['xxx']
+</code></p>
+
+<h4>查看更多rake 命令</h4>
+
+<p><code>bash
+$ rake -T
+</code></p>
 
 <h3>常见问题</h3>
 
