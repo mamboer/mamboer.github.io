@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: WebDev | Lv's Gene]]></title>
+  <title><![CDATA[Category: WebDev | FASO - 我们有病在发烧!]]></title>
   <link href="http://mamboer.github.com/blog/categories/webdev/atom.xml" rel="self"/>
   <link href="http://mamboer.github.com/"/>
-  <updated>2013-04-04T04:37:49+08:00</updated>
+  <updated>2013-06-11T00:41:17+08:00</updated>
   <id>http://mamboer.github.com/</id>
   <author>
     <name><![CDATA[levinwong]]></name>
@@ -35,6 +35,28 @@ rake update_style         # Update the template's style
 <p>有一个点需要注意的:</p>
 
 <blockquote><p>如果你使用的是第三方的theme，最后两行rake命令就不用执行了！！否则本地的主题会被官方主题覆盖掉！</p></blockquote>
+
+<h3>查看和更新本地ruby gem</h3>
+
+<p>可通过gem &mdash;help查看下gem的相关命令。</p>
+
+<p>查看本地的gem:</p>
+
+<p><code>bash
+gem list --local
+</code></p>
+
+<p>删除本地老版本的gem:</p>
+
+<p><code>bash
+gem cleanup
+</code></p>
+
+<p>更新本地指定的gem，例如bundler:</p>
+
+<p><code>bash
+gem update bundler
+</code></p>
 ]]></content>
   </entry>
   
@@ -45,7 +67,7 @@ rake update_style         # Update the template's style
     <id>http://mamboer.github.com/blog/2013/03/04/sublime-text-markdown-preview-plugin</id>
     <content type="html"><![CDATA[<h3>Sublime text markdown文档预览插件</h3>
 
-<p>和大家分享下这个插件<a href="https://github.com/revolunet/sublimetext-markdown-preview">SublimeText 2 MarkDown preview</a>，很好用！支持<a href="http://github.github.com/github-flavored-markdown/" title="Github flavored markdown">GFM</a>,我自己的博客文章就是使用这个插件写的。<i class='emoji smile'></i></p>
+<p>和大家分享下这个插件<a href="https://github.com/revolunet/sublimetext-markdown-preview">SublimeText 2 MarkDown preview</a>，很好用！支持<a href="http://github.github.com/github-flavored-markdown/" title="Github flavored markdown">GFM</a>,我自己的博客文章就是使用这个插件写的。{% emoji smile %}</p>
 
 <blockquote><p>另外，如果你parser配置里面用的是github，那么就可以用各种<a href="http://www.emoji-cheat-sheet.com/" title="emoji表情">emoji表情</a>了！！</p></blockquote>
 
@@ -78,10 +100,10 @@ copy/b %folder%\all.js + %folder%\graphite.blocks.navigation.menu.js %folder%\al
 copy/b %folder%\all.js + %folder%\graphite.blocks.widgets.js %folder%\all.js
 copy/b %folder%\all.js + %folder%\graphite.blocks.widgets.accordion.js %folder%\all.js</p>
 
-<p>:: If this line below fails, try to replace "java" with something like "C:\Program Files (x86)\Java\jre6\bin\java.exe"
+<p>:: If this line below fails, try to replace &ldquo;java&rdquo; with something like &ldquo;C:\Program Files (x86)\Java\jre6\bin\java.exe&rdquo;
 java -jar yuicompressor-2.4.2\build\yuicompressor-2.4.2.jar %folder%all.js -o %folder%all.min.js</p>
 
-<p>echo Selected Javascript files are minified and combined into '%folder%all.min.js'.
+<p>echo Selected Javascript files are minified and combined into &lsquo;%folder%all.min.js&rsquo;.
 pause
 ```</p>
 ]]></content>
@@ -330,7 +352,7 @@ var fun = function(){};
 
 <p><em>View the <a href="http://github.github.com/github-flavored-markdown/sample_content.html">source of this content</a>.</em></p>
 
-<p>Let's get the whole "linebreak" thing out of the way. The next paragraph contains two phrases separated by a single newline character:</p>
+<p>Let&rsquo;s get the whole &ldquo;linebreak&rdquo; thing out of the way. The next paragraph contains two phrases separated by a single newline character:</p>
 
 <!--more-->
 
@@ -359,13 +381,13 @@ Violets are blue</p>
 </ul>
 
 
-<p>These are dangerous goodies though, and we need to make sure email addresses don't get mangled:</p>
+<p>These are dangerous goodies though, and we need to make sure email addresses don&rsquo;t get mangled:</p>
 
-<p>My email addy is tom@github.com.</p>
+<p>My email addy is <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x74;&#111;&#109;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;&#46;">&#116;&#111;&#x6d;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;&#46;</a></p>
 
-<h2>Math is hard, let's go shopping</h2>
+<h2>Math is hard, let&rsquo;s go shopping</h2>
 
-<p>In first grade I learned that 5 > 3 and 2 &lt; 7. Maybe some arrows. 1 -> 2 -> 3. 9 &lt;- 8 &lt;- 7.</p>
+<p>In first grade I learned that 5 > 3 and 2 &lt; 7. Maybe some arrows. 1 &ndash;> 2 &ndash;> 3. 9 &lt;&ndash; 8 &lt;&ndash; 7.</p>
 
 <p>Triangles man! a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
 
@@ -380,7 +402,7 @@ Violets are blue</p>
 </ul>
 
 
-<p>Let's get crazy:</p>
+<p>Let&rsquo;s get crazy:</p>
 
 <ol>
 <li><p>This is a list item with two paragraphs. Lorem ipsum dolor
@@ -394,7 +416,7 @@ sit amet velit.</p></li>
 </ol>
 
 
-<p>What about some code <strong>in</strong> a list? That's insane, right?</p>
+<p>What about some code <strong>in</strong> a list? That&rsquo;s insane, right?</p>
 
 <ol>
 <li><p>In Ruby you can map like this:</p>
@@ -427,7 +449,7 @@ sit amet velit.</p></li>
 end
 </code></pre>
 
-<p>You see, that was formatted as code because it's been indented by four spaces.</p>
+<p>You see, that was formatted as code because it&rsquo;s been indented by four spaces.</p>
 
 <p>How about we throw some angle braces and ampersands in there?</p>
 
@@ -463,14 +485,14 @@ end
 
 <p>Or perhaps someone a little less eloquent:</p>
 
-<blockquote><p>I wish you'd have given me this written question ahead of time so I
-could plan for it... I'm sure something will pop into my head here in
+<blockquote><p>I wish you&rsquo;d have given me this written question ahead of time so I
+could plan for it&hellip; I&rsquo;m sure something will pop into my head here in
 the midst of this press conference, with all the pressure of trying to
-come up with answer, but it hadn't yet...</p>
+come up with answer, but it hadn&rsquo;t yet&hellip;</p>
 
-<p>I don't want to sound like
-I have made no mistakes. I'm confident I have. I just haven't - you
-just put me under the spot here, and maybe I'm not as quick on my feet
+<p>I don&rsquo;t want to sound like
+I have made no mistakes. I&rsquo;m confident I have. I just haven&rsquo;t &ndash; you
+just put me under the spot here, and maybe I&rsquo;m not as quick on my feet
 as I should be in coming up with one.</p></blockquote>
 
 <h2>Table for two</h2>

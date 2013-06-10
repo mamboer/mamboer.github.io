@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | Lv's Gene]]></title>
+  <title><![CDATA[Category: Life | FASO - 我们有病在发烧!]]></title>
   <link href="http://mamboer.github.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://mamboer.github.com/"/>
-  <updated>2013-04-04T04:37:49+08:00</updated>
+  <updated>2013-06-11T00:41:17+08:00</updated>
   <id>http://mamboer.github.com/</id>
   <author>
     <name><![CDATA[levinwong]]></name>
@@ -65,7 +65,7 @@ username.github.com$
     <id>http://mamboer.github.com/blog/2013/02/27/github-be-my-blog</id>
     <content type="html"><![CDATA[<h3>别了，各种虚拟主机</h3>
 
-<p>本文将详细介绍如何在Windows系统下利用一个很酷的博客框架<a href="http://octopress.org" title="octopress">octopress</a>搭建博客，并发布到GitHub Pages上，以及后期博客发布后的更新工作....</p>
+<p>本文将详细介绍如何在Windows系统下利用一个很酷的博客框架<a href="http://octopress.org" title="octopress">octopress</a>搭建博客，并发布到GitHub Pages上，以及后期博客发布后的更新工作&hellip;.</p>
 
 <!--more-->
 
@@ -89,7 +89,7 @@ username.github.com$
 <p> <code>sh
  $ rake generate
 </code></p></li>
-<li><h4>本地预览http://localhost:4000</h4>
+<li><h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
 
 <p> <code>sh
  $ rake preview
@@ -141,7 +141,7 @@ username.github.com$
 </ol>
 
 
-<p>很大一个原因是没有安装python...,或者环境变量没有python.exe。具体看<a href="http://stackoverflow.com/questions/11804471/octopress-generating-blank-files">这篇文章</a>。</p>
+<p>很大一个原因是没有安装python&hellip;,或者环境变量没有python.exe。具体看<a href="http://stackoverflow.com/questions/11804471/octopress-generating-blank-files">这篇文章</a>。</p>
 ]]></content>
   </entry>
   

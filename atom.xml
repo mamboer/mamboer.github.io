@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Lv's Gene]]></title>
+  <title><![CDATA[FASO - 我们有病在发烧!]]></title>
   <link href="http://mamboer.github.com/atom.xml" rel="self"/>
   <link href="http://mamboer.github.com/"/>
-  <updated>2013-04-04T04:37:49+08:00</updated>
+  <updated>2013-06-11T00:41:14+08:00</updated>
   <id>http://mamboer.github.com/</id>
   <author>
     <name><![CDATA[levinwong]]></name>
@@ -96,6 +96,31 @@
 <p>有一个点需要注意的:</p>
 
 <blockquote><p>如果你使用的是第三方的theme，最后两行rake命令就不用执行了！！否则本地的主题会被官方主题覆盖掉！</p></blockquote>
+
+<h3>查看和更新本地ruby gem</h3>
+
+<p>可通过gem &mdash;help查看下gem的相关命令。</p>
+
+<p>查看本地的gem:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem list --local
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>删除本地老版本的gem:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem cleanup
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>更新本地指定的gem，例如bundler:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem update bundler
+</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
@@ -576,7 +601,7 @@ var fun = function(){};
 
 <p><em>View the <a href="http://github.github.com/github-flavored-markdown/sample_content.html">source of this content</a>.</em></p>
 
-<p>Let&#8217;s get the whole &#8220;linebreak&#8221; thing out of the way. The next paragraph contains two phrases separated by a single newline character:</p>
+<p>Let&rsquo;s get the whole &ldquo;linebreak&rdquo; thing out of the way. The next paragraph contains two phrases separated by a single newline character:</p>
 
 <!--more-->
 
@@ -605,13 +630,13 @@ Violets are blue</p>
 </ul>
 
 
-<p>These are dangerous goodies though, and we need to make sure email addresses don&#8217;t get mangled:</p>
+<p>These are dangerous goodies though, and we need to make sure email addresses don&rsquo;t get mangled:</p>
 
-<p>My email addy is tom@github.com.</p>
+<p>My email addy is <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x74;&#x6f;&#109;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#x6d;&#46;">&#x74;&#x6f;&#x6d;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;&#x2e;</a></p>
 
-<h2>Math is hard, let&#8217;s go shopping</h2>
+<h2>Math is hard, let&rsquo;s go shopping</h2>
 
-<p>In first grade I learned that 5 > 3 and 2 &lt; 7. Maybe some arrows. 1 -> 2 -> 3. 9 &lt;- 8 &lt;- 7.</p>
+<p>In first grade I learned that 5 > 3 and 2 &lt; 7. Maybe some arrows. 1 &ndash;> 2 &ndash;> 3. 9 &lt;&ndash; 8 &lt;&ndash; 7.</p>
 
 <p>Triangles man! a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
 
@@ -626,7 +651,7 @@ Violets are blue</p>
 </ul>
 
 
-<p>Let&#8217;s get crazy:</p>
+<p>Let&rsquo;s get crazy:</p>
 
 <ol>
 <li><p>This is a list item with two paragraphs. Lorem ipsum dolor
@@ -640,7 +665,7 @@ sit amet velit.</p></li>
 </ol>
 
 
-<p>What about some code <strong>in</strong> a list? That&#8217;s insane, right?</p>
+<p>What about some code <strong>in</strong> a list? That&rsquo;s insane, right?</p>
 
 <ol>
 <li><p>In Ruby you can map like this:</p>
@@ -673,7 +698,7 @@ sit amet velit.</p></li>
 end
 </code></pre>
 
-<p>You see, that was formatted as code because it&#8217;s been indented by four spaces.</p>
+<p>You see, that was formatted as code because it&rsquo;s been indented by four spaces.</p>
 
 <p>How about we throw some angle braces and ampersands in there?</p>
 
@@ -709,14 +734,14 @@ end
 
 <p>Or perhaps someone a little less eloquent:</p>
 
-<blockquote><p>I wish you&#8217;d have given me this written question ahead of time so I
-could plan for it&#8230; I&#8217;m sure something will pop into my head here in
+<blockquote><p>I wish you&rsquo;d have given me this written question ahead of time so I
+could plan for it&hellip; I&rsquo;m sure something will pop into my head here in
 the midst of this press conference, with all the pressure of trying to
-come up with answer, but it hadn&#8217;t yet&#8230;</p>
+come up with answer, but it hadn&rsquo;t yet&hellip;</p>
 
-<p>I don&#8217;t want to sound like
-I have made no mistakes. I&#8217;m confident I have. I just haven&#8217;t - you
-just put me under the spot here, and maybe I&#8217;m not as quick on my feet
+<p>I don&rsquo;t want to sound like
+I have made no mistakes. I&rsquo;m confident I have. I just haven&rsquo;t &ndash; you
+just put me under the spot here, and maybe I&rsquo;m not as quick on my feet
 as I should be in coming up with one.</p></blockquote>
 
 <h2>Table for two</h2>
@@ -748,7 +773,7 @@ as I should be in coming up with one.</p></blockquote>
     <id>http://mamboer.github.com/blog/2013/02/27/github-be-my-blog</id>
     <content type="html"><![CDATA[<h3>别了，各种虚拟主机</h3>
 
-<p>本文将详细介绍如何在Windows系统下利用一个很酷的博客框架<a href="http://octopress.org" title="octopress">octopress</a>搭建博客，并发布到GitHub Pages上，以及后期博客发布后的更新工作&#8230;.</p>
+<p>本文将详细介绍如何在Windows系统下利用一个很酷的博客框架<a href="http://octopress.org" title="octopress">octopress</a>搭建博客，并发布到GitHub Pages上，以及后期博客发布后的更新工作&hellip;.</p>
 
 <!--more-->
 
@@ -772,7 +797,7 @@ as I should be in coming up with one.</p></blockquote>
 <p> <code>sh
  $ rake generate
 </code></p></li>
-<li><h4>本地预览http://localhost:4000</h4>
+<li><h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
 
 <p> <code>sh
  $ rake preview
@@ -824,7 +849,7 @@ as I should be in coming up with one.</p></blockquote>
 </ol>
 
 
-<p>很大一个原因是没有安装python&#8230;,或者环境变量没有python.exe。具体看<a href="http://stackoverflow.com/questions/11804471/octopress-generating-blank-files">这篇文章</a>。</p>
+<p>很大一个原因是没有安装python&hellip;,或者环境变量没有python.exe。具体看<a href="http://stackoverflow.com/questions/11804471/octopress-generating-blank-files">这篇文章</a>。</p>
 ]]></content>
   </entry>
   
