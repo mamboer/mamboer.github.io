@@ -1,201 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[FASO - 没事发发烧！]]></title>
-  <link href="http://mamboer.github.com/atom.xml" rel="self"/>
-  <link href="http://mamboer.github.com/"/>
-  <updated>2013-08-28T05:13:59+08:00</updated>
-  <id>http://mamboer.github.com/</id>
-  <author>
-    <name><![CDATA[levinwong]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>GFM Markdown语法高亮 - FASO - 没事发发烧！</title>
+	<meta name="author" content="levinwong"/>
 
+	
+	<meta name="description" content="2013-03-04 in WebDev&nbsp; , tags: 如何在GFM中高亮代码呢？ 举个例子： ``` js
+var x = 1;
+var fun = function(){};
+``` 高亮结果为： 1
+2
+var x = 1;
+var fun = function(){}; &hellip;"/>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+	<link href="/atom.xml" rel="alternate" title="FASO - 没事发发烧！" type="application/atom+xml"/>
+	<link rel="canonical" href=""/>
+	<link href="/favicon.ico" rel="shortcut icon"/>
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+	
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<script>var iScripts = [];</script>
+	
+</head>
+
+<body class="">
+	
+		
+	
+	
+	<div id="container" class="container">
+		<form class="navbar-form" action="http://google.com.hk/search" method="get">
+	<input class="pull-right" placeholder="search..." type="text" name="q" results="0">
+	<input type="hidden" name="q" value="site:mamboer.github.com">
+</form>
+
+        <div id="main" role="main" class="main">
+            <header>
+                <h1>GFM Markdown语法高亮</h1>
+            </header>
+            <nav id="nav" class="nav">
+	<a title="home page" class="current" href="/"><i>&#9730;</i>Home</a>
+	
+	<a class="rss" href="/atom.xml" target="_blank" title="RSS">RSS</a>
+	
+	<a title="archives" class="" href="/notes/archives/"><i>&#9730;</i>Archives</a>
+	<a title="about" class="" href="/about/"><i>&#9730;</i>About</a>
+	<ul class="favnav">
+		<a href="//faso.me/j/" title="the J framework" target="_blank">J</a>
+		<a href="//faso.me/nwapp/" title="Node-webkit applications" target="_blank">NW</a>
+	</ul>
+</nav>
+
+            <article class="content">
+            <section>
+2013-03-04
+
+<span class="categories">
+ in 
+  <a href="/notes/cate/WebDev" title="WebDev">WebDev</a>&nbsp;
   
-  <entry>
-    <title type="html"><![CDATA[time management pomodoro]]></title>
-    <link href="http://mamboer.github.com/notes/2013/03/06/time-management-pomodoro/"/>
-    <updated>2013-03-06T10:29:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/03/06/time-management-pomodoro</id>
-    <content type="html"><![CDATA[<h3>番茄工作法</h3>
+</span>, 
 
-<p>久闻其名但从来没有细看过，今天开始试行下<a href="http://baike.baidu.com/view/5259318.htm" title="番茄工作法">番茄工作法</a></p>
 
-<blockquote><ol>
-<li>一个番茄时间（25分钟）不可分割，不存在半个或一个半番茄时间。</li>
-<li>一个番茄时间内如果做与任务无关的事情，则该番茄时间作废。</li>
-<li>永远不要在非工作时间内使用《番茄工作法》。（例如：用3个番茄时间陪儿子下的棋、用5个番茄时间钓鱼，等等。）</li>
-<li>不要拿自己的番茄数据与他人的番茄数据比较。</li>
-<li>番茄的数量不可能决定任务最终的成败。</li>
-<li>必须有一份适合自己的作息时间表。</li>
-</ol>
-</blockquote>
-]]></content>
-  </entry>
+<span class="tags">
+  tags:
   
-  <entry>
-    <title type="html"><![CDATA[Contributing to an existing Octopress blog]]></title>
-    <link href="http://mamboer.github.com/notes/2013/03/05/contributing-to-an-existing-octopress-blog/"/>
-    <updated>2013-03-05T19:29:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/03/05/contributing-to-an-existing-octopress-blog</id>
-    <content type="html"><![CDATA[<h3>如何在一台新的电脑上配置已有octopress github blog站点?</h3>
+</span>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone git@github.com:username/username.github.com.git
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>username.github.com
-</span><span class='line'>username.github.com<span class="nv">$ </span>git checkout <span class="nb">source</span>
-</span><span class='line'>username.github.com<span class="nv">$ </span>mkdir _deploy
-</span><span class='line'>username.github.com<span class="nv">$ </span><span class="nb">cd </span>_deploy
-</span><span class='line'>username.github.com/_deploy<span class="nv">$ </span>git init
-</span><span class='line'>username.github.com/_deploy<span class="nv">$ </span>git remote add origin git@github.com:username/username.github.com.git
-</span><span class='line'>username.github.com/_deploy<span class="nv">$ </span>git pull origin master
-</span><span class='line'>username.github.com/_deploy<span class="nv">$ </span><span class="nb">cd</span> ..
-</span><span class='line'>username.github.com<span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
+</section>
 
-
-<p>引用地址：<a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one" title="Octopress: Setting up a Blog and Contributing to an Existing One">Octopress: Setting up a Blog and Contributing to an Existing One</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to update octopress]]></title>
-    <link href="http://mamboer.github.com/notes/2013/03/05/how-to-update-octopress/"/>
-    <updated>2013-03-05T15:13:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/03/05/how-to-update-octopress</id>
-    <content type="html"><![CDATA[<h3>如何更新本地的octopress框架呢？</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git pull octopress master <span class="c"># Get the lastest ocopress</span>
-</span><span class='line'>bundle install            <span class="c"># Keep gems updated</span>
-</span><span class='line'>rake update_source        <span class="c"># Update the template&#39;s source</span>
-</span><span class='line'>rake update_style         <span class="c"># Update the template&#39;s style</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<!--more-->
-
-
-<p>完整的更新说明请参考这个文档<a href="http://octopress.org/docs/updating/" title="Updating Octopress">Updating Octopress</a></p>
-
-<p>有一个点需要注意的:</p>
-
-<blockquote><p>如果你使用的是第三方的theme，最后两行rake命令就不用执行了！！否则本地的主题会被官方主题覆盖掉！</p></blockquote>
-
-<h3>查看和更新本地ruby gem</h3>
-
-<p>可通过gem &mdash;help查看下gem的相关命令。</p>
-
-<p>查看本地的gem:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem list --local
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>删除本地老版本的gem:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem cleanup
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>更新本地指定的gem，例如bundler:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem update bundler
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sublime text markdown文档预览插件]]></title>
-    <link href="http://mamboer.github.com/notes/2013/03/04/sublime-text-markdown-preview-plugin/"/>
-    <updated>2013-03-04T16:49:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/03/04/sublime-text-markdown-preview-plugin</id>
-    <content type="html"><![CDATA[<h3>Sublime text markdown文档预览插件</h3>
-
-<p>和大家分享下这个插件<a href="https://github.com/revolunet/sublimetext-markdown-preview">SublimeText 2 MarkDown preview</a>，很好用！支持<a href="http://github.github.com/github-flavored-markdown/" title="Github flavored markdown">GFM</a>,我自己的博客文章就是使用这个插件写的。<i class='emoji smile'></i></p>
-
-<blockquote><p>另外，如果你parser配置里面用的是github，那么就可以用各种<a href="http://www.emoji-cheat-sheet.com/" title="emoji表情">emoji表情</a>了！！</p></blockquote>
-
-<h3>如何在octopress中启用emoji呢？</h3>
-
-<p>请参考这个<a href="https://github.com/aar0nTw/octemoji" title="octemoji">octemoji</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[使用bat命令调用yuicompressor合并和压缩js]]></title>
-    <link href="http://mamboer.github.com/notes/2013/03/04/merge-js-files-via-batch-command/"/>
-    <updated>2013-03-04T16:29:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/03/04/merge-js-files-via-batch-command</id>
-    <content type="html"><![CDATA[<blockquote><p>去年年初搞QQ团购Webapp的时候用到了bat命令调用jar包的方式，这里记录一下核心的地方以备忘。</p></blockquote>
-
-<h3>使用bat命令调用yuicompressor合并和压缩js</h3>
-
-<!--more-->
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='bat'><span class='line'><span class="p">@</span><span class="k">echo</span> <span class="k">off</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">set</span> <span class="nv">folder</span><span class="o">=</span>..\Website\javascript\
-</span><span class='line'>copy<span class="n">/b</span> <span class="nv">%folder%</span>\graphite.js <span class="nv">%folder%</span>\all.js
-</span><span class='line'>copy<span class="n">/b</span> <span class="nv">%folder%</span>\all.js + <span class="nv">%folder%</span>\graphite.blocks.js <span class="nv">%folder%</span>\all.js
-</span><span class='line'>copy<span class="n">/b</span> <span class="nv">%folder%</span>\all.js + <span class="nv">%folder%</span>\graphite.blocks.navigation.js <span class="nv">%folder%</span>\all.js
-</span><span class='line'>copy<span class="n">/b</span> <span class="nv">%folder%</span>\all.js + <span class="nv">%folder%</span>\graphite.blocks.navigation.menu.js <span class="nv">%folder%</span>\all.js
-</span><span class='line'>copy<span class="n">/b</span> <span class="nv">%folder%</span>\all.js + <span class="nv">%folder%</span>\graphite.blocks.widgets.js <span class="nv">%folder%</span>\all.js
-</span><span class='line'>copy<span class="n">/b</span> <span class="nv">%folder%</span>\all.js + <span class="nv">%folder%</span>\graphite.blocks.widgets.accordion.js <span class="nv">%folder%</span>\all.js
-</span><span class='line'>
-</span><span class='line'><span class="c">:: If this line below fails, try to replace &quot;java&quot; with something like &quot;C:\Program Files (x86)\Java\jre6\bin\java.exe&quot;</span>
-</span><span class='line'>java -jar yuicompressor<span class="m">-2</span>.<span class="m">4</span>.<span class="m">2</span>\build\yuicompressor<span class="m">-2</span>.<span class="m">4</span>.<span class="m">2</span>.jar <span class="nv">%folder%</span>all.js -o <span class="nv">%folder%</span>all.min.js
-</span><span class='line'>
-</span><span class='line'><span class="k">echo</span> Selected Javascript files are minified and combined into <span class="s1">&#39;%folder%all.min.js&#39;</span>.
-</span><span class='line'><span class="k">pause</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GFM Markdown语法高亮]]></title>
-    <link href="http://mamboer.github.com/notes/2013/03/04/gfm-syntax-highlighting/"/>
-    <updated>2013-03-04T16:13:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/03/04/gfm-syntax-highlighting</id>
-    <content type="html"><![CDATA[<h3>如何在GFM中高亮代码呢？</h3>
+<section class="post">
+<h3>如何在GFM中高亮代码呢？</h3>
 
 <p>举个例子：</p>
 
@@ -587,280 +468,49 @@ var fun = function(){};
 </span><span class='line'><span class="nt">&lt;/select&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Github Flavored Markdown]]></title>
-    <link href="http://mamboer.github.com/notes/2013/03/04/github-flavored-markdown/"/>
-    <updated>2013-03-04T16:07:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/03/04/github-flavored-markdown</id>
-    <content type="html"><![CDATA[<h3>GitHub Flavored Markdown</h3>
 
-<blockquote><p>转载一篇GFM的文章，方便自己查阅</p></blockquote>
-
-<p><em>View the <a href="http://github.github.com/github-flavored-markdown/sample_content.html">source of this content</a>.</em></p>
-
-<p>Let&rsquo;s get the whole &ldquo;linebreak&rdquo; thing out of the way. The next paragraph contains two phrases separated by a single newline character:</p>
-
-<!--more-->
-
-
-<p>Roses are red
-Violets are blue</p>
-
-<p>The next paragraph has the same phrases, but now they are separated by two spaces and a newline character:</p>
-
-<p>Roses are red<br/>
-Violets are blue</p>
-
-<p>Oh, and one thing I cannot stand is the mangling of words with multiple underscores in them like perform_complicated_task or do_this_and_do_that_and_another_thing.</p>
-
-<h2>A bit of the GitHub spice</h2>
-
-<p>In addition to the changes in the previous section, certain references are auto-linked:</p>
-
-<ul>
-<li>SHA: be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</li>
-<li>User@SHA ref: mojombo@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</li>
-<li>User/Project@SHA: mojombo/god@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</li>
-<li>#Num: #1</li>
-<li>User/#Num: mojombo#1</li>
-<li>User/Project#Num: mojombo/god#1</li>
-</ul>
-
-
-<p>These are dangerous goodies though, and we need to make sure email addresses don&rsquo;t get mangled:</p>
-
-<p>My email addy is <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#116;&#x6f;&#x6d;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;">&#x74;&#111;&#109;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;&#x2e;</a></p>
-
-<h2>Math is hard, let&rsquo;s go shopping</h2>
-
-<p>In first grade I learned that 5 > 3 and 2 &lt; 7. Maybe some arrows. 1 &ndash;> 2 &ndash;> 3. 9 &lt;&ndash; 8 &lt;&ndash; 7.</p>
-
-<p>Triangles man! a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
-
-<h2>We all like making lists</h2>
-
-<p>The above header should be an H2 tag. Now, for a list of fruits:</p>
-
-<ul>
-<li>Red Apples</li>
-<li>Purple Grapes</li>
-<li>Green Kiwifruits</li>
-</ul>
-
-
-<p>Let&rsquo;s get crazy:</p>
-
-<ol>
-<li><p>This is a list item with two paragraphs. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-mi posuere lectus.</p>
-
-<p>Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-sit amet velit.</p></li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
-</ol>
-
-
-<p>What about some code <strong>in</strong> a list? That&rsquo;s insane, right?</p>
-
-<ol>
-<li><p>In Ruby you can map like this:</p>
-
-<pre><code> ['a', 'b'].map { |x| x.uppercase }
-</code></pre></li>
-<li><p>In Rails, you can do a shortcut:</p>
-
-<pre><code> ['a', 'b'].map(&amp;:uppercase)
-</code></pre></li>
-</ol>
-
-
-<p>Some people seem to like definition lists</p>
-
-<dl>
-  <dt>Lower cost</dt>
-  <dd>The new version of this product costs significantly less than the previous one!</dd>
-  <dt>Easier to use</dt>
-  <dd>We&#8217;ve changed the product so that it&#8217;s much easier to use!</dd>
-</dl>
-
-
-<h2>I am a robot</h2>
-
-<p>Maybe you want to print <code>robot</code> to the console 1000 times. Why not?</p>
-
-<pre><code>def robot_invasion
-  puts("robot " * 1000)
-end
-</code></pre>
-
-<p>You see, that was formatted as code because it&rsquo;s been indented by four spaces.</p>
-
-<p>How about we throw some angle braces and ampersands in there?</p>
-
-<pre><code>&lt;div class="footer"&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;
-</code></pre>
-
-<h2>Set in stone</h2>
-
-<p>Preformatted blocks are useful for ASCII art:</p>
-
-<pre>
-             ,-. 
-    ,     ,-.   ,-. 
-   / \   (   )-(   ) 
-   \ |  ,.>-(   )-< 
-    \|,' (   )-(   ) 
-     Y ___`-'   `-' 
-     |/__/   `-' 
-     | 
-     | 
-     |    -hrr- 
-  ___|_____________ 
-</pre>
-
-
-<h2>Playing the blame game</h2>
-
-<p>If you need to blame someone, the best way to do so is by quoting them:</p>
-
-<blockquote><p>I, at any rate, am convinced that He does not throw dice.</p></blockquote>
-
-<p>Or perhaps someone a little less eloquent:</p>
-
-<blockquote><p>I wish you&rsquo;d have given me this written question ahead of time so I
-could plan for it&hellip; I&rsquo;m sure something will pop into my head here in
-the midst of this press conference, with all the pressure of trying to
-come up with answer, but it hadn&rsquo;t yet&hellip;</p>
-
-<p>I don&rsquo;t want to sound like
-I have made no mistakes. I&rsquo;m confident I have. I just haven&rsquo;t &ndash; you
-just put me under the spot here, and maybe I&rsquo;m not as quick on my feet
-as I should be in coming up with one.</p></blockquote>
-
-<h2>Table for two</h2>
-
-<table>
-  <tr>
-    <th>ID</th><th>Name</th><th>Rank</th>
-  </tr>
-  <tr>
-    <td>1</td><td>Tom Preston-Werner</td><td>Awesome</td>
-  </tr>
-  <tr>
-    <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
-  </tr>
-</table>
-
-
-<h2>Crazy linking action</h2>
-
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
-<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[利用Github搭建个人博客]]></title>
-    <link href="http://mamboer.github.com/notes/2013/02/27/github-be-my-blog/"/>
-    <updated>2013-02-27T18:33:00+08:00</updated>
-    <id>http://mamboer.github.com/notes/2013/02/27/github-be-my-blog</id>
-    <content type="html"><![CDATA[<h3>别了，各种虚拟主机</h3>
-
-<p>本文将详细介绍如何在Windows系统下利用一个很酷的博客框架<a href="http://octopress.org" title="octopress">octopress</a>搭建博客，并发布到GitHub Pages上，以及后期博客发布后的更新工作&hellip;.</p>
-
-<!--more-->
-
-
-<h3>怎么搞？</h3>
-
-<p>详细请参考下面d教程</p>
-
-<ol>
-<li><a href="http://www.sunfanwu.com/blog/2012/10/16/my-first-octopress-blog/" title="Github上搭建博客">Github上搭建博客</a></li>
-<li><a href="http://mrzhang.me/blog/blog-equals-github-plus-octopress.html" title="Blog = GitHub + Octopress">Blog = GitHub + Octopress</a></li>
-<li><a href="http://roshanca.com/hello-octopress/" title="Hello Octopress">Hello Octopress</a></li>
-</ol>
-
-
-<h3>常用重要的命令</h3>
-
-<h4>生成静态文档</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake generate
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake preview
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>部署到github</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake deploy
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>部署完毕后提交source分支</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git add .
-</span><span class='line'><span class="nv">$ </span>git commit -m <span class="s2">&quot;commit msg&quot;</span>
-</span><span class='line'><span class="nv">$ </span>git push origin <span class="nb">source</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>创建新文章YYYY-MM-DD-hello-world.markdown</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake new_post<span class="o">[</span><span class="s1">&#39;hello world&#39;</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<pre><code>相关链接: 
-* [markdown语法](http://daringfireball.net/projects/markdown/syntax "markdown语法")
-* [GFM](https://help.github.com/articles/github-flavored-markdown "GitHub Flavored Markdown")
-* [Sublime text markdown文档预览插件](http://faso.me/blog/2013/03/04/sublime-text-markdown-preview-plugin/ "Sublime text markdown文档预览插件")
-</code></pre>
-
-<h4>更新主题.themes/xxx</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake update_source<span class="o">[</span><span class="s1">&#39;xxx&#39;</span><span class="o">]</span>
-</span><span class='line'><span class="nv">$ </span>rake update_style<span class="o">[</span><span class="s1">&#39;xxx&#39;</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>查看更多rake 命令</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake -T
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>常见问题</h3>
-
-<ol>
-<li><h4>rake generate之后生成0bk空白的html文件</h4></li>
-</ol>
-
-
-<p>很大一个原因是没有安装python&hellip;,或者环境变量没有python.exe。具体看<a href="http://stackoverflow.com/questions/11804471/octopress-generating-blank-files">这篇文章</a>。</p>
-]]></content>
-  </entry>
-  
-</feed>
+</section>
+<section class="meta">
+
+<span class="author">
+  <a href="http://mamboer.github.com">levinwong</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-03-04">2013-03-04</time>
+</span>
+<br/>
+<br/>
+<span>
+	<a  href="http://mamboer.github.com/notes/2013/03/04/github-flavored-markdown/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://mamboer.github.com/notes/2013/03/04/merge-js-files-via-batch-command/" class="pageNav"  >Next</a>
+</span>
+            </article>
+        </div>
+
+        <footer>
+    <p class="copyright">Copyright faso - 2013 by 
+	<a href="/about/">
+	
+    levinwong
+</a>
+	</p>
+</footer>
+    </div>
+
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

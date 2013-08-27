@@ -1,0 +1,207 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>利用Github搭建个人博客 - FASO - 没事发发烧！</title>
+	<meta name="author" content="levinwong"/>
+
+	
+	<meta name="description" content="2013-02-27 in Life&nbsp; , tags: 别了，各种虚拟主机 本文将详细介绍如何在Windows系统下利用一个很酷的博客框架octopress搭建博客，并发布到GitHub Pages上，以及后期博客发布后的更新工作&hellip;. 怎么搞？ 详细请参考下面d教程 &hellip;"/>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+	<link href="/atom.xml" rel="alternate" title="FASO - 没事发发烧！" type="application/atom+xml"/>
+	<link rel="canonical" href=""/>
+	<link href="/favicon.ico" rel="shortcut icon"/>
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+	
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<script>var iScripts = [];</script>
+	
+</head>
+
+<body class="">
+	
+		
+	
+	
+	<div id="container" class="container">
+		<form class="navbar-form" action="http://google.com.hk/search" method="get">
+	<input class="pull-right" placeholder="search..." type="text" name="q" results="0">
+	<input type="hidden" name="q" value="site:mamboer.github.com">
+</form>
+
+        <div id="main" role="main" class="main">
+            <header>
+                <h1>利用Github搭建个人博客</h1>
+            </header>
+            <nav id="nav" class="nav">
+	<a title="home page" class="current" href="/"><i>&#9730;</i>Home</a>
+	
+	<a class="rss" href="/atom.xml" target="_blank" title="RSS">RSS</a>
+	
+	<a title="archives" class="" href="/notes/archives/"><i>&#9730;</i>Archives</a>
+	<a title="about" class="" href="/about/"><i>&#9730;</i>About</a>
+	<ul class="favnav">
+		<a href="//faso.me/j/" title="the J framework" target="_blank">J</a>
+		<a href="//faso.me/nwapp/" title="Node-webkit applications" target="_blank">NW</a>
+	</ul>
+</nav>
+
+            <article class="content">
+            <section>
+2013-02-27
+
+<span class="categories">
+ in 
+  <a href="/notes/cate/Life" title="Life">Life</a>&nbsp;
+  
+</span>, 
+
+
+<span class="tags">
+  tags:
+  
+</span>
+
+</section>
+
+<section class="post">
+<h3>别了，各种虚拟主机</h3>
+
+<p>本文将详细介绍如何在Windows系统下利用一个很酷的博客框架<a href="http://octopress.org" title="octopress">octopress</a>搭建博客，并发布到GitHub Pages上，以及后期博客发布后的更新工作&hellip;.</p>
+
+<!--more-->
+
+
+<h3>怎么搞？</h3>
+
+<p>详细请参考下面d教程</p>
+
+<ol>
+<li><a href="http://www.sunfanwu.com/blog/2012/10/16/my-first-octopress-blog/" title="Github上搭建博客">Github上搭建博客</a></li>
+<li><a href="http://mrzhang.me/blog/blog-equals-github-plus-octopress.html" title="Blog = GitHub + Octopress">Blog = GitHub + Octopress</a></li>
+<li><a href="http://roshanca.com/hello-octopress/" title="Hello Octopress">Hello Octopress</a></li>
+</ol>
+
+
+<h3>常用重要的命令</h3>
+
+<h4>生成静态文档</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake generate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>本地预览<a href="http://localhost:4000">http://localhost:4000</a></h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake preview
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>部署到github</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>部署完毕后提交source分支</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commit -m <span class="s2">&quot;commit msg&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>创建新文章YYYY-MM-DD-hello-world.markdown</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake new_post<span class="o">[</span><span class="s1">&#39;hello world&#39;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>相关链接: 
+* [markdown语法](http://daringfireball.net/projects/markdown/syntax "markdown语法")
+* [GFM](https://help.github.com/articles/github-flavored-markdown "GitHub Flavored Markdown")
+* [Sublime text markdown文档预览插件](http://faso.me/blog/2013/03/04/sublime-text-markdown-preview-plugin/ "Sublime text markdown文档预览插件")
+</code></pre>
+
+<h4>更新主题.themes/xxx</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake update_source<span class="o">[</span><span class="s1">&#39;xxx&#39;</span><span class="o">]</span>
+</span><span class='line'><span class="nv">$ </span>rake update_style<span class="o">[</span><span class="s1">&#39;xxx&#39;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>查看更多rake 命令</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake -T
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>常见问题</h3>
+
+<ol>
+<li><h4>rake generate之后生成0bk空白的html文件</h4></li>
+</ol>
+
+
+<p>很大一个原因是没有安装python&hellip;,或者环境变量没有python.exe。具体看<a href="http://stackoverflow.com/questions/11804471/octopress-generating-blank-files">这篇文章</a>。</p>
+
+</section>
+<section class="meta">
+
+<span class="author">
+  <a href="http://mamboer.github.com">levinwong</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-02-27">2013-02-27</time>
+</span>
+<br/>
+<br/>
+<span>
+	<a   class="pageNavInvalid"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://mamboer.github.com/notes/2013/03/04/github-flavored-markdown/" class="pageNav"  >Next</a>
+</span>
+            </article>
+        </div>
+
+        <footer>
+    <p class="copyright">Copyright faso - 2013 by 
+	<a href="/about/">
+	
+    levinwong
+</a>
+	</p>
+</footer>
+    </div>
+
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>
