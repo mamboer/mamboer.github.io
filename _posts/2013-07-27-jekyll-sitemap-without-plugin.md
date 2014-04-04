@@ -1,9 +1,26 @@
 ---
+layout: post
+title:  "不使用插件为 Jekyll 添加 Sitemap"
+date:   2013-07-27 14:17:59
+categories: 
+- Notes 
+tags:
+- Jekyll
+- Sitemap
+
+---
+
+将下面的代码保存为 sitemap.xml 文件保存在本地站点 repo 根目录下，编译后 push 到 GitHub 即可。
+
+{% highlight django %}
+{% raw %}
+---
 sitemap:
     priority: 0.7
     changefreq: monthly
-    lastmod: 2013-07-28T12:49:30-05:00
+    lastmod: 2013-07-27T12:49:30-05:00
 ---
+ 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
@@ -31,3 +48,7 @@ sitemap:
   {% endfor %}
 
 </urlset>
+{% endraw %}
+{% endhighlight %}
+
+参考：<http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="{{ site.author }}" />
+    <title>{{ page.title }} | {{ site.author }}</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css"/>
+    {% if page.style %}
+    <style type="text/css">{{ page.style }}</style>
+    {% endif %}
+    <script>var iScripts = [];</script>
+</head>
+<body class="{{page.iclass}}">
+    <div id="container" class="container">
+        <div id="main" role="main" class="main">
+            <header>
+                <h1>{{ page.title }}</h1>
+            </header>
+            <nav id="nav" class="nav">
+                <a title="home page" class="current" href="/"><i>&#9730;</i>Home</a>
+                <a title="categories" class="" href="/cates/"><i>&#9730;</i>Cates</a>
+                <a title="tags" class="" href="/tags/"><i>&#9730;</i>Tags</a>
+                <a title="archives" class="" href="/archive/"><i>&#9730;</i>Archives</a>
+                <a title="about" class="" href="/about/"><i>&#9730;</i>About</a>
+                <ul class="favnav">
+                    <a href="http://oxox.io" title="OXOX FD Team" target="_blank">OXOX.IO</a>
+                    <a href="http://faso.me/j/" title="The J javascript framework" target="_blank">J</a>
+                    <a href="http://github.com/mamboer/cssutil/" title="A nodejs package for dealing with CSS" target="_blank">CssUtil</a>
+                </ul>
+            </nav>
+            <article class="content">
+            {{ content }}
+            </article>
+        </div>
+
+        <footer>
+            <p class="copyright">Copyright FASO.ME - {{site.time | date:"%Y"}} by <a href="/about/">LevinWong</a></small></p>
+        </footer>
+    </div>
+    {% include scripts.md %}
+</body>
+</html>

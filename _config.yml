@@ -1,0 +1,8 @@
+name: FASO
+markdown: redcarpet
+pygments: true
+permalink: /:categories/:year:month:day/:title/
+author: levinwong
+safe: true
+paginate: 15
+exclude: ["less"]
