@@ -6,3 +6,4 @@ author: levinwong
 safe: true
 paginate: 15
 exclude: ["less"]
+encoding: utf-8
