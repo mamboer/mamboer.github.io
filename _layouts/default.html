@@ -1,44 +1,97 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
-    <meta name="author" content="{{ site.author }}" />
     <title>{{ page.title }} | {{ site.author }}</title>
-    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />{% if page.description %}
+    <meta name="description" content="{{page.description}}" />{% else %}
+    <meta name="description" content="{{site.description}}" />{% endif %} {% if page.categories %}
+    <meta name="keywords" content="{{page.categories | join: ','}}" />{% else %}
+    <meta name="keywords" content="{{site.keywords | join: ','}}" />{% endif %} {% if page.date %}
+    <meta http-equiv="date" content="{{page.date |date: '%A, %d  %Y %H:%M:%S GMT'}}" />{% endif %}
+    <meta name="robots" content="{{page.index}}INDEX,{{page.follow}}FOLLOW" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css"/>
+    <link rel="stylesheet" href="{{ site.url }}/assets/dist/css/style.css" />
     {% if page.style %}
-    <style type="text/css">{{ page.style }}</style>
+    <style type="text/css">
+    {
+        {
+            page.style
+        }
+    }
+    </style>
     {% endif %}
-    <script>var iScripts = [];</script>
+    <script>
+    var iScripts = [];
+    </script>
 </head>
+
 <body class="{{page.iclass}}">
-    <div id="container" class="container">
-        <div id="main" role="main" class="main">
+
+    <header class="navbar navbar-static-top fs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".fs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand fs-brand" title="Home of {{site.name}}">&#9773;<span class="fs-brand-name">{{site.name}}</span></a>
+            </div>
+            <nav class="collapse navbar-collapse fs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav fs-mainnav">
+                    <li>
+                        <a title="categories" href="/cates/"><i>&#9730;</i>Cates</a>
+                    </li>
+                    <li>
+                        <a title="tags" class="" href="/tags/"><i>&#9730;</i>Tags</a>
+                    </li>
+                    <li>
+                        <a title="archives" class="" href="/archive/"><i>&#9730;</i>Archives</a>
+                    </li>
+                    <li>
+                        <a title="about" class="" href="/about/"><i>&#9730;</i>About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right fs-favnav">
+                    <li>
+                        <a href="http://oxox.io" title="OXOX FD Team" target="_blank">OXOX.IO</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="fs-main" role="main">
+        <div class="container">
             <header>
                 <h1>{{ page.title }}</h1>
             </header>
-            <nav id="nav" class="nav">
-                <a title="home page" class="current" href="/"><i>&#9730;</i>Home</a>
-                <a title="categories" class="" href="/cates/"><i>&#9730;</i>Cates</a>
-                <a title="tags" class="" href="/tags/"><i>&#9730;</i>Tags</a>
-                <a title="archives" class="" href="/archive/"><i>&#9730;</i>Archives</a>
-                <a title="about" class="" href="/about/"><i>&#9730;</i>About</a>
-                <ul class="favnav">
-                    <a href="http://oxox.io" title="OXOX FD Team" target="_blank">OXOX.IO</a>
-                    <a href="http://faso.me/j/" title="The J javascript framework" target="_blank">J</a>
-                    <a href="http://github.com/mamboer/cssutil/" title="A nodejs package for dealing with CSS" target="_blank">CssUtil</a>
-                </ul>
-            </nav>
             <article class="content">
-            {{ content }}
+                {{ content }}
             </article>
         </div>
+    </main>
 
-        <footer>
-            <p class="copyright">Copyright FASO.ME - {{site.time | date:"%Y"}} by <a href="/about/">LevinWong</a></small></p>
-        </footer>
-    </div>
+    <footer class="fs-footer" role="contentinfo">
+
+        <p class="avatar">
+            {% if page.githubid %}
+            <img src="https://avatars2.githubusercontent.com/u/{{page.githubid}}?s=32" alt="{{page.githubid}}"/>
+            {% else %}
+            <img src="https://avatars2.githubusercontent.com/u/{{site.githubid}}?s=32" alt="{{site.githubid}}"/>
+            {% endif %}
+        </p>
+        <p class="copyright">Copyright FASO.ME - {{site.time | date:"%Y"}} by <a href="/about/">LevinWong</a>
+            </small>
+        </p>
+    </footer>
+
     {% include scripts.md %}
 </body>
+
 </html>

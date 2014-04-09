@@ -5,5 +5,6 @@ permalink: /:categories/:year:month:day/:title/
 author: levinwong
 safe: true
 paginate: 15
-exclude: ["less"]
+exclude: ["less","node_modules"]
 encoding: utf-8
+githubid: 85879

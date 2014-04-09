@@ -1,0 +1,39 @@
+{
+  "name": "grunt-faso-me",
+  "version": "0.1.0",
+  "keywords": [
+    "faso",
+    "webapp",
+    "javascript",
+    "html5"
+  ],
+  "description": "Home of FASO.ME",
+  "repository": "git://github.com/mamboer/mamboer.github.io.git",
+  "homepage": "http://faso.me",
+  "author": {
+    "name": "LevinWong",
+    "site": "http://faso.me"
+  },
+  "license": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-concat-css": "*",
+    "grunt-css": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-copy": "*",
+    "load-grunt-config": "*",
+    "grunt-newer": "*",
+    "grunt-contrib-less": "~0.11.0"
+  },
+  "dependencies": {
+    "time-grunt": "*"
+  }
+}

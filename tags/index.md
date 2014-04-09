@@ -9,11 +9,11 @@ layout: page
 {% endfor %}
 </div>
 
-<ul class="listing">
+<ul class="ilist">
 {% for tag in site.tags %}
-  <li class="listing-seperator" id="tag-{{ tag[0] }}">{{ tag[0] }}</li>
+  <li class="ilist-seperator" id="tag-{{ tag[0] }}">{{ tag[0] }}</li>
 {% for post in tag[1] %}
-  <li class="listing-item">
+  <li class="ilist-item">
   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
   </li>

@@ -5,10 +5,11 @@
         debug:true,
         alias:{
             "jquery":"/assets/js/libs/jquery/2.0.2/jquery.min.js",
+            "common":"/assets/dist/js/common.min.js",
             "jquery.tagclound":"/assets/js/jquery.tagcloud.js",
             "han":"/assets/js/han.js"
         },
-        preload:['jquery']
+        preload:['common']
     });
     var app = window['seajsMod']||{mod:'main'};
     app.app=app.app||'common';
