@@ -16,13 +16,7 @@
     <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
     <link rel="stylesheet" href="{{ site.url }}/assets/dist/css/style.css" />
     {% if page.style %}
-    <style type="text/css">
-    {
-        {
-            page.style
-        }
-    }
-    </style>
+    <style type="text/css">{{ page.style}}</style>
     {% endif %}
     <script>
     var iScripts = [];

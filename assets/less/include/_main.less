@@ -4,6 +4,7 @@
 
 /*==== S Variables ====*/
 @c1:     #2E9AFE;
+@c2:     #333333;
 /*==== E Variables ====*/
 
 /*==== S Reset ====*/
@@ -44,7 +45,7 @@ embed,object,iframe{display:block;margin:4px auto;}
     a{
         margin-right: 4px;
         &:hover{
-            color:#333333 !important;text-decoration:none;
+            color:@c2 !important;text-decoration:none;
         }
     }
 }
@@ -55,7 +56,7 @@ embed,object,iframe{display:block;margin:4px auto;}
 
 //site navigation
 .fs-nav{
-    background-color: #333;
+    background-color: @c2;
     font-family:"Electrolize",sans-serif;
     text-transform:uppercase;
     margin-bottom: 0;
@@ -110,13 +111,14 @@ embed,object,iframe{display:block;margin:4px auto;}
 .ilist,.ilist-seperator{list-style-type:none;}
 .ilist-seperator{font-weight:bold;padding-bottom: 5px;padding-top: 10px;}
 .ilist-item {
-    a{padding:.2em 1em;}
-    time{color:#999999;}
+    a{padding:.2em 0;}
+    time{color:#ccc;padding:0 1em;font-size: 0.9em;}
 }
 
 .post{padding:.5em 0em;}
 .gist{font-size: 12px;line-height:1.6;}
 
+//copyright
 .copyright{
     text-align:center;
     a {
@@ -128,8 +130,12 @@ embed,object,iframe{display:block;margin:4px auto;}
         }
     }
 }
+//avatar
+.avatar img{border-radius: 50%;}
+
+//分页
 .paginator {
-    font: 14px Arial,Helvetica,sans-serif;
+    font: 16px Arial,Helvetica,sans-serif;
     color: #AAA;
     margin: 20px 0;
     line-height: 150%;
@@ -145,13 +151,16 @@ embed,object,iframe{display:block;margin:4px auto;}
     }
     a:hover{
         color: white;
-        background: #83BF73;
+        background: @c2;
     }
 }
+
+//quote及代码高亮区域
 .highlight{
     margin-bottom: 10px;
     pre{
         background: transparent;
+        color: #D0D0D0;
         .border-radius(0px);
         margin-bottom: 0;
     }

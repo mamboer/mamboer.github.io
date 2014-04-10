@@ -5,7 +5,7 @@ comments: yes
 ---
 <link rel="stylesheet" media="all" href="/assets/css/han.css"/>
 
-<p><a href="http://faso.me" title="faso.me" class="n fn full-name url" rel="external">LevinWong</a><sup><a id="ref-1" href="#ref-note-1">[1]</a></sup>，来自于<span class="title">腾讯</span>。
+<p><a href="http://faso.me" title="faso.me" class="n fn full-name url" rel="external">LevinWong</a><sup><a id="ref-1" href="#ref-note-1">[1]</a></sup>，目前就职于<span class="title">腾讯</span>。
 </p>
 
 官方评价：
@@ -21,7 +21,7 @@ comments: yes
 
 <h2>注释</h2>
 <ol class="notes">
-<li id="ref-note-1"><a href="#ref-1">^</a>TECENT.COM</li>
+<li id="ref-note-1"><a href="#ref-1">^</a>@github/mamboer</li>
 </ol>
 
 <script>

@@ -14,8 +14,8 @@ layout: page
   <li class="ilist-seperator" id="tag-{{ tag[0] }}">{{ tag[0] }}</li>
 {% for post in tag[1] %}
   <li class="ilist-item">
-  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
   </li>
 {% endfor %}
 {% endfor %}

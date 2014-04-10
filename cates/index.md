@@ -3,7 +3,7 @@ title: FASO Categories
 layout: page
 ---
 
-<div id='tag_cloud' class="tabcloud">
+<div id='tag_cloud' class="tagcloud">
 {% for cat in site.categories %}
 <a href="#cat-{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}">{{ cat[0] }} ({{ cat[1].size }})</a>
 {% endfor %}
@@ -14,8 +14,8 @@ layout: page
   <li class="ilist-seperator" id="cat-{{ cat[0] }}">{{ cat[0] }}</li>
 {% for post in cat[1] %}
   <li class="ilist-item">
-  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
   </li>
 {% endfor %}
 {% endfor %}

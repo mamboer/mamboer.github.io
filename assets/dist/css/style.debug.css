@@ -6179,7 +6179,7 @@ iframe {
   color: #D0D0D0;
 }
 .fs-nav {
-  background-color: #333;
+  background-color: #333333;
   font-family: "Electrolize", sans-serif;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -6255,10 +6255,12 @@ iframe {
   padding-top: 10px;
 }
 .ilist-item a {
-  padding: .2em 1em;
+  padding: .2em 0;
 }
 .ilist-item time {
-  color: #999999;
+  color: #ccc;
+  padding: 0 1em;
+  font-size: 0.9em;
 }
 .post {
   padding: .5em 0em;
@@ -6281,8 +6283,11 @@ iframe {
   background: #666;
   text-decoration: none;
 }
+.avatar img {
+  border-radius: 50%;
+}
 .paginator {
-  font: 14px Arial, Helvetica, sans-serif;
+  font: 16px Arial, Helvetica, sans-serif;
   color: #AAA;
   margin: 20px 0;
   line-height: 150%;
@@ -6300,13 +6305,14 @@ iframe {
 }
 .paginator a:hover {
   color: white;
-  background: #83BF73;
+  background: #333333;
 }
 .highlight {
   margin-bottom: 10px;
 }
 .highlight pre {
   background: transparent;
+  color: #D0D0D0;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   margin-bottom: 0;
