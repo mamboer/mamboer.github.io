@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: weibo
 ---
 
 <section>
@@ -52,4 +53,4 @@ layout: default
 	<a {% if page.next %} href="{{ site.url }}{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >Next</a>
 </span>
 </section>
-{% include weibowall.md %}
+{% include comments.md %}
