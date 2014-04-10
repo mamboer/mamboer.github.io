@@ -6195,9 +6195,9 @@ iframe {
   display: inline-block;
   visibility: hidden;
   color: #2e9afe;
-  font-size: 1.1em;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  margin-right: 3px;
 }
 .fs-mainnav a {
   -webkit-transition: all .2s linear;
@@ -6205,16 +6205,16 @@ iframe {
   opacity: .7;
   color: #fff;
 }
+.fs-mainnav a.current,
 .fs-mainnav a:hover {
   opacity: 1;
 }
+.fs-mainnav a.current i,
 .fs-mainnav a:hover i {
-  color: #f9f9f9;
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px);
-}
-.fs-mainnav .current i {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
   visibility: visible;
+  color: #2e9afe;
 }
 .fs-brand {
   font-size: 22px;

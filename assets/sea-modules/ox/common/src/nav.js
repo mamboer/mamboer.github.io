@@ -1,14 +1,13 @@
 define(function(require){
+
+    //自定义js模块
+    require('./iscript');
+
     $(document).ready(function(){
-        var $items = $('#nav>a'),
-            $home = $items.eq(0);
+        var $items = $('#nav a');
         $items.each(function(i,o){
-            if(i===0){
-                return;
-            }
             if(location.href.indexOf(o.getAttribute('href'))>0){
                 o.className='current';
-                $home.removeClass('current');
                 return false;
             }
         });

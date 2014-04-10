@@ -69,18 +69,18 @@ embed,object,iframe{display:block;margin:4px auto;}
     }
 }
 .fs-mainnav{
-    i{display: inline-block;visibility: hidden;color: #2e9afe;font-size: 1.1em;-webkit-transition:all .3s ease-out;transition:all .3s ease-out;}
+    i{display: inline-block;visibility: hidden;color: #2e9afe;-webkit-transition:all .3s ease-out;transition:all .3s ease-out;margin-right: 3px;}
     a{
         -webkit-transition:all .2s linear;
         transition:all .2s linear;
         opacity: .7;
         color:#fff;
-        &:hover{
+        &.current,&:hover{
             opacity: 1;
-            i{color:#f9f9f9;.transform(translateY(-2px));}
+            i{.transform(translateY(-1px));visibility: visible;color:@c1;}
         }
+
     }
-    .current i{visibility: visible;}
 }
 .fs-brand{font-size: 22px;}
 .fs-favnav{

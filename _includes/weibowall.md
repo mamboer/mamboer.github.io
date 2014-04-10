@@ -9,7 +9,7 @@ iScripts.push({
     /*o=2 no title,3 has title,4 only input,5.title+input. default 39*/
     o:4,
     css:'545454_FFFFFF_CDFF9C_FFFFFF_007500_333333',
-    title:'{{ page.title }}',
+    title:'{{site.name}}->{{ page.title }}',
     src:'http://wall.v.t.qq.com/index.php?c=wall&a=index&ak=801396726&w=$1&h=$2&n=&s=4&o=$3&cs=$4',
     _onLoad:function(){
         this.src+="&t="+encodeURIComponent(this.title)+"&url="+this.url;
