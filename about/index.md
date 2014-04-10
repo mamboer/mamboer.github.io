@@ -1,7 +1,7 @@
 ---
 title: 关于我
 layout: page
-comments: duoshuo
+comments: weibo
 ---
 <link rel="stylesheet" media="all" href="/assets/css/han.css"/>
 
