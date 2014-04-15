@@ -5,6 +5,7 @@
 /*==== S Variables ====*/
 @c1:     #2E9AFE;
 @c2:     #333333;
+@f1:     "Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 /*==== E Variables ====*/
 
 /*==== S Reset ====*/
@@ -22,16 +23,16 @@ blockquote{
     display:block;text-align:justify;border-left:4px solid #eeeeee;margin:1em 0em;padding-left:1.5em;
     p{margin:0;padding:.5em 0;}
 }
-h2,h3{margin-top:15px;margin-bottom: 10px;}
 h4{padding:10px 0 5px;}
 body{
     word-spacing:1px;
     font-family:"Galdeano","Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;color:#000000;background-color:#ffffff;
 }
-h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.6em;color:#000;}
-h2{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;}
-h3{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.2em;color:#222;}
-h4{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1em;color:#333;}
+h1,h2,h3,h4{font-family:@f1;}
+h1{font-size:1.6em;color:#000;margin-bottom: 15px;}
+h2{font-size:1.4em;color:#111;}
+h3{sans-serif;font-size:1.2em;color:#222;}
+h4{font-size:1em;color:#333;}
 embed,object,iframe{display:block;margin:4px auto;}
 /*==== E Reset ====*/
 /*==== S Main ====*/
