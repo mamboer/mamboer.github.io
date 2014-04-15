@@ -6074,6 +6074,8 @@ button.close {
 /*==== E Variables ====*/
 /*==== S Reset ====*/
 a {
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
   color: #2e9afe;
 }
 a:hover,
@@ -6154,9 +6156,7 @@ iframe {
   padding: .5em 0;
 }
 .content img {
-  max-width: 600px;
-  display: block;
-  margin: 4px auto;
+  max-width: 100%;
   -webkit-box-shadow: #999999 1px 1px 4px;
   box-shadow: #999999 1px 1px 4px;
 }
@@ -6205,8 +6205,6 @@ iframe {
   margin-right: 3px;
 }
 .fs-mainnav a {
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
   opacity: .7;
   color: #fff;
 }
@@ -6223,6 +6221,8 @@ iframe {
 }
 .fs-brand {
   font-size: 22px;
+}
+.fs-brand-flag {
   color: #df3d82;
 }
 .fs-brand-name {
@@ -6249,7 +6249,7 @@ iframe {
   color: #999;
 }
 .fs-main {
-  padding: 30px 15px;
+  padding: 30px 0;
 }
 .ilist {
   padding: 0;
@@ -6342,6 +6342,9 @@ iframe {
   }
 }
 @media (max-width: 639px) {
+  .fs-main {
+    padding: 20px 0;
+  }
   .ilist-item {
     margin-bottom: 3px;
   }
