@@ -3,13 +3,20 @@
 @import url(http://fonts.googleapis.com/css?family=Cuprum);
 
 /*==== S Variables ====*/
-@c1:     #2E9AFE;
-@c2:     #333333;
+@c1:     #2E9AFE; /*链接色-栏*/
+@c2:     #333333; /*文本色-黑*/
+@c3:     #DF3D82; /*强调色-红*/
 @f1:     "Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 /*==== E Variables ====*/
 
 /*==== S Reset ====*/
-a{color:@c1;}
+a{
+    color:@c1;
+    &:hover,
+    &:focus {
+      color: lighten(@c3, 15%);
+    }
+}
 pre code{padding:3px;font:13px/1.6 Menlo,"Andale Mono",Consolas,"Courier New",Monaco,monospace;display:block;overflow:auto;}
 pre {
     border: 1px solid #ddd;
@@ -31,7 +38,7 @@ body{
 h1,h2,h3,h4{font-family:@f1;}
 h1{font-size:1.6em;color:#000;margin-bottom: 15px;}
 h2{font-size:1.4em;color:#111;}
-h3{sans-serif;font-size:1.2em;color:#222;}
+h3{font-size:1.2em;color:#222;}
 h4{font-size:1em;color:#333;}
 embed,object,iframe{display:block;margin:4px auto;}
 /*==== E Reset ====*/
@@ -83,7 +90,8 @@ embed,object,iframe{display:block;margin:4px auto;}
 
     }
 }
-.fs-brand{font-size: 22px;}
+.fs-brand{font-size: 22px;color:@c3;}
+.fs-brand-name{margin-left: 3px;}
 .fs-favnav{
     a{
         -webkit-transition:all .2s linear;

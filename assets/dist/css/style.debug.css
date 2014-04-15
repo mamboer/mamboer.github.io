@@ -6068,10 +6068,17 @@ button.close {
   background-color: transparent;
 }
 /*==== S Variables ====*/
+/*链接色-栏*/
+/*文本色-黑*/
+/*强调色-红*/
 /*==== E Variables ====*/
 /*==== S Reset ====*/
 a {
   color: #2e9afe;
+}
+a:hover,
+a:focus {
+  color: #ea7fac;
 }
 pre code {
   padding: 3px;
@@ -6108,23 +6115,26 @@ body {
   color: #000000;
   background-color: #ffffff;
 }
-h1 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Cuprum", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+h1 {
   font-size: 1.6em;
   color: #000;
+  margin-bottom: 15px;
 }
 h2 {
-  font-family: "Cuprum", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-size: 1.4em;
   color: #111;
 }
 h3 {
-  font-family: "Cuprum", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-size: 1.2em;
   color: #222;
 }
 h4 {
-  font-family: "Cuprum", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-size: 1em;
   color: #333;
 }
@@ -6213,6 +6223,10 @@ iframe {
 }
 .fs-brand {
   font-size: 22px;
+  color: #df3d82;
+}
+.fs-brand-name {
+  margin-left: 3px;
 }
 .fs-favnav a {
   -webkit-transition: all .2s linear;
@@ -6324,6 +6338,14 @@ iframe {
 }
 @media (max-width: 767px) {
   .fs-mainnav i {
+    display: none;
+  }
+}
+@media (max-width: 639px) {
+  .ilist-item {
+    margin-bottom: 3px;
+  }
+  .ilist-item time {
     display: none;
   }
 }

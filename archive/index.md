@@ -12,7 +12,7 @@ title: Archive
   {% endif %}
   <li class="ilist-item">
   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m-%d" }}</time>
   </li>
 {% endfor %}
 </ul>
