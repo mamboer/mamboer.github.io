@@ -6157,6 +6157,7 @@ iframe {
 }
 .content img {
   max-width: 100%;
+  height: auto;
   -webkit-box-shadow: #999999 1px 1px 4px;
   box-shadow: #999999 1px 1px 4px;
 }
