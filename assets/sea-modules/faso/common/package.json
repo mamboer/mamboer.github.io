@@ -1,0 +1,12 @@
+{
+  "family": "faso",
+  "name": "common",
+  "version": "1.0.1",
+
+  "spm": {
+    "alias": {
+      "jquery": "jquery"
+    },
+    "output": ["main.js","about.js","cate.js", "style.css"]
+  }
+}

@@ -14,9 +14,9 @@
     var app = window['seajsMod']||{mod:'main'};
     app.app=app.app||'common';
     if(location.href.indexOf('localhost')>0){
-        seajs.use("ox/%/src/$".replace('%',app.app).replace('$',app.mod));
+        seajs.use("faso/%/src/$".replace('%',app.app).replace('$',app.mod));
     }else{
-        seajs.use("ox/%/1.0.1/$".replace('%',app.app).replace('$',app.mod));
+        seajs.use("faso/%/1.0.1/$".replace('%',app.app).replace('$',app.mod));
     }
 </script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=31671173" charset="UTF-8"></script>
