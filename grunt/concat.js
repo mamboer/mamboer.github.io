@@ -13,13 +13,16 @@ module.exports = {
             'assets/js/libs/greensock/TweenLite.js',
             'assets/js/libs/PreloadJS/preloadjs-0.4.1.combined.js',
             'assets/js/libs/jquery-plugins/jquery.easing.1.3.js',
-            'assets/js/resume/Utils.js',
-            'assets/js/resume/Modify.js',
-            'assets/js/resume/Polygon.js',
-            'assets/js/resume/Point.js',
-            'assets/js/resume/Trig.js',
-            'assets/js/resume/SwipeListener.js',
-            'assets/js/resume/Browser.js'
+            'assets/js/resume/common/NS.js',
+            'assets/js/resume/common/Browser.js',
+            'assets/js/resume/common/Utils.js',
+            'assets/js/resume/common/Modify.js',
+            'assets/js/resume/common/Polygon.js',
+            'assets/js/resume/common/Point.js',
+            'assets/js/resume/common/Trig.js',
+            'assets/js/resume/common/SwipeListener.js',
+            'assets/js/resume/common/RAF.js',
+            'assets/js/resume/common/Analytics.js'
         ],
         dest:'assets/dist/js/common.resume.js'
     }

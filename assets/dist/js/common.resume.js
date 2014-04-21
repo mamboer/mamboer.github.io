@@ -19906,55 +19906,189 @@ jQuery.extend( jQuery.easing,
  * OF THE POSSIBILITY OF SUCH DAMAGE. 
  *
  */
+//app namespace definition
+window["LV"] = window["LV"]||{version:"1.0.0"};
+// browser module
+LV.Browser = function(e) {
+    this.userAgent = navigator.userAgent;
+    this.ua = this.userAgent.toLowerCase();
+    this.name = null;
+    this.version = null;
+    this.versionFull = null;
+    if (window.orientation != undefined) this.mobile = true;
+    else this.mobile = false; if ("ontouchstart" in window || "onmsgesturechange" in window) this.touch = true;
+    else this.touch = false;
+    this.osDetected = function(e) {
+        this.os = {
+            name: e,
+            version: null,
+            versionFull: null
+        }
+    };
+    this.deviceDetected = function(e) {
+        this.device = {
+            name: e,
+            osVersion: null,
+            osVersionFull: null
+        }
+    };
+    if (this.ua.indexOf("iphone") != -1) {
+        this.deviceDetected("iphone")
+    } else if (this.ua.indexOf("ipad") != -1) {
+        this.deviceDetected("ipad")
+    } else if (this.ua.indexOf("android") != -1) {
+        this.deviceDetected("android");
+        if (this.ua.indexOf("version/") != -1) this.device.osVersion = this.ua.split("version/")[1].split(".")[0];
+        if (this.ua.indexOf("android ") != -1) this.device.osVersionFull = this.ua.split("android ")[1].split(";")[0]
+    }
+    if (this.device && (this.device.name == "iphone" || this.device.name == "ipad")) {
+        if (this.ua.indexOf("version/") != -1) this.device.osVersion = this.ua.split("version/")[1].split(".")[0];
+        if (this.userAgent.indexOf(" OS ")) {
+            if (this.userAgent.indexOf(" like ")) this.device.osVersionFull = this.userAgent.split(" OS ")[1].split(" like ")[0].split("_").join(".")
+        }
+    }
+    this.ielt9 = false;
+    this.name = this.ua.match(/android/gi);
+    if (this.name == null) this.name = this.ua.match(/chrome/gi);
+    if (this.name == null) this.name = this.ua.match(/safari/gi);
+    if (this.name == null) this.name = this.ua.match(/firefox/gi);
+    if (this.name == null) this.name = this.ua.match(/msie/gi);
+    if (this.name && this.name instanceof Array) this.name = this.name[0];
+    switch (this.name) {
+        case "android":
+            if (this.ua.indexOf("version/") != -1) this.version = this.ua.split("version/")[1].split(".")[0];
+            if (this.ua.indexOf("android ") != -1) {
+                this.fullVersion = this.ua.split("android ")[1].split(";")[0]
+            }
+            break;
+        case "chrome":
+            if (this.ua.indexOf("chrome/") != -1) this.version = this.ua.split("chrome/")[1].split(".")[0];
+            if (this.ua.indexOf(" safari/") != -1) {
+                this.versionFull = this.ua.split(" chrome/")[1].split(" safari/")[0]
+            }
+            break;
+        case "safari":
+            if (this.ua.indexOf("crios/") != -1) {
+                this.name = "chrome";
+                this.version = this.ua.split("crios/")[1].split(".")[0]
+            } else if (this.ua.indexOf("version/") != -1) {
+                this.version = this.ua.split("version/")[1].split(".")[0];
+                if (this.mobile) {
+                    if (this.ua.indexOf(" mobile/") != -1) {
+                        this.versionFull = this.ua.split("version/")[1].split(" mobile/")[0]
+                    }
+                } else {
+                    if (this.ua.indexOf(" safari/") != -1) {
+                        this.versionFull = this.ua.split("version/")[1].split(" safari/")[0]
+                    }
+                }
+            }
+            break;
+        case "firefox":
+            if (this.ua.indexOf("firefox/") != -1) {
+                this.version = this.ua.split("firefox/")[1].split(".")[0];
+                this.versionFull = this.ua.split("firefox/")[1]
+            }
+            break;
+        case "msie":
+            this.name = "ie";
+            if (this.ua.indexOf("msie ") != -1) this.version = this.ua.split("msie ")[1].split(".")[0];
+            else if (this.ua.indexOf("msie/") != -1) this.version = this.ua.split("msie/")[1].split(".")[0];
+            if (this.ua.indexOf("msie ") != -1) {
+                this.versionFull = this.ua.split("msie ")[1].split(";")[0]
+            }
+            if (this.version < 9) this.ielt9 = true;
+            break
+    }
+    if (this.device && this.device.osVersion) this.device.osVersion = Number(this.device.osVersion);
+    if (this.version) this.version = Number(this.version);
+    delete this.ua;
+    delete this.userAgent;
+    delete this.deviceDetected;
+    delete this.osDetected;
+    this.saveOrientation = function() {
+        this.orientation = window.orientation;
+        if (window.orientation == 0 || window.orientation == 180) this.layout = "portrait";
+        else this.layout = "landscape"
+    };
+    if (this.mobile) {
+        this.saveOrientation();
+        var t = function() {
+            this.saveOrientation();
+            if (this.onOrientationChange) this.onOrientationChange(this)
+        };
+        window.addEventListener("orientationchange", t.bind(this), false)
+    }
+};
 window.Math = window.Math != undefined ? window.Math : {};
 Math.sq = function(e) {
     return e * e
 };
-window.Utils = window.Utils != undefined ? window.Utils : {};
-Utils.map = function(e, t, n, r, i, s) {
-    var o = (e - t) / (n - t);
-    var u = i - r;
-    var a = u * o;
-    var f = r + a;
-    if (s) {
-        if (f > i) f = i;
-        else if (f < r) f = r
-    }
-    return f
+
+//utils module
+LV.Utils = {
+
+    map : function(e, t, n, r, i, s) {
+        var o = (e - t) / (n - t);
+        var u = i - r;
+        var a = u * o;
+        var f = r + a;
+        if (s) {
+            if (f > i) f = i;
+            else if (f < r) f = r
+        }
+        return f
+    },
+
+    capitaliseFirstLetter : function (e) {
+        return e.charAt(0).toUpperCase() + e.slice(1)
+    },
+
+    browser : new LV.Browser(),
+
+    $body : $('body'),
+
+    $win : $(window),
+
+    $doc : $(document),
+
+    $html : $('html')
+
 };
-window.Modify = window.Modify != undefined ? window.Modify : {};
-Modify.svgElement = function(e) {
-    e.saveAttr = function(e) {
-        this.attr("_" + e, this.attr(e))
-    };
-    e.showing = true;
-    e.hide = function() {
-        if (!this.showing) return;
-        this.showing = false;
-        this.saveAttr("fill-opacity");
-        this.saveAttr("stroke-opacity");
-        this.attr({
-            "fill-opacity": 0,
-            "stroke-opacity": 0
-        })
-    };
-    e.show = function() {
-        if (this.showing) return;
-        this.showing = true;
-        this.attr({
-            "fill-opacity": this.attr("_fill-opacity"),
-            "stroke-opacity": this.attr("_stroke-opacity")
-        })
+LV.Modify = {
+    svgElement : function(e) {
+        e.saveAttr = function(e) {
+            this.attr("_" + e, this.attr(e))
+        };
+        e.showing = true;
+        e.hide = function() {
+            if (!this.showing) return;
+            this.showing = false;
+            this.saveAttr("fill-opacity");
+            this.saveAttr("stroke-opacity");
+            this.attr({
+                "fill-opacity": 0,
+                "stroke-opacity": 0
+            })
+        };
+        e.show = function() {
+            if (this.showing) return;
+            this.showing = true;
+            this.attr({
+                "fill-opacity": this.attr("_fill-opacity"),
+                "stroke-opacity": this.attr("_stroke-opacity")
+            })
+        }
     }
 };
-var Polygon = function(e, t) {
+LV.Polygon = function(e, t) {
     this.length = 0;
     this.addPoint(e);
     this.snap = null;
     this.svg = null;
     if (t) this.closePoly()
 };
-Polygon.prototype = {
+LV.Polygon.prototype = {
     addPoint: function(e) {
         if (!e) return;
         if (Array.isArray(e)) {
@@ -19962,7 +20096,7 @@ Polygon.prototype = {
                 this[this.length] = e[t];
                 this.length++
             }
-        } else if (e instanceof Point) {
+        } else if (e instanceof LV.Point) {
             this[this.length] = e;
             this.length++
         }
@@ -19983,14 +20117,14 @@ Polygon.prototype = {
     createSVG: function(e) {
         this.snap = e;
         this.svg = this.snap.polygon(this.getArray());
-        return this.svg
+        return this.svg;
     }
 };
-var Point = function(e, t) {
+LV.Point = function(e, t) {
     this.x = e;
     this.y = t
 };
-Point.prototype = {
+LV.Point.prototype = {
     distance: function(e) {
         return {
             x: this.distanceX(e),
@@ -20004,14 +20138,14 @@ Point.prototype = {
         return e.y - this.y
     },
     angle: function(e, t) {
-        return Trig.angle(this, e, t)
+        return LV.Trig.angle(this, e, t)
     },
     setXY: function(e, t) {
         this.x = e;
         this.y = t
     }
 };
-var Trig = {
+LV.Trig = {
     pothag: function(e, t) {
         var n = Math.sq(e);
         var r = Math.sq(t);
@@ -20019,15 +20153,15 @@ var Trig = {
         return Math.sqrt(i)
     },
     xFromAngleHypotenuse: function(e, t) {
-        return t * Math.cos(Trig.toRad(e))
+        return t * Math.cos(LV.Trig.toRad(e))
     },
     yFromAngleOpposite: function(e, t) {
-        return t * Math.tan(Trig.toRad(e))
+        return t * Math.tan(LV.Trig.toRad(e))
     },
     xyFromAngleHypotenuse: function(e, t) {
         var n = {};
-        n.x = Trig.xFromAngleHypotenuse(e, t);
-        n.y = Trig.yFromAngleOpposite(e, n.x);
+        n.x = LV.Trig.xFromAngleHypotenuse(e, t);
+        n.y = LV.Trig.yFromAngleOpposite(e, n.x);
         return n
     },
     toDegrees: function(e) {
@@ -20038,16 +20172,16 @@ var Trig = {
     },
     angle: function(e, t, n) {
         var r;
-        if (e instanceof Point) r = e.distance(t);
+        if (e instanceof LV.Point) r = e.distance(t);
         else r = {
             x: t.x - e.x,
             y: t.y - e.y
         };
-        var i = Trig.pothag(r.x, r.y);
+        var i = LV.Trig.pothag(r.x, r.y);
         var s = (Math.sq(r.y) + Math.sq(i) - Math.sq(r.x)) / (2 * r.y * i);
         s = Math.acos(s);
         if (n) {
-            s = Trig.toDegrees(s);
+            s = LV.Trig.toDegrees(s);
             if (e.x > t.x) {
                 s += 90;
                 if (isNaN(s)) s = 180
@@ -20072,25 +20206,25 @@ var Trig = {
     UP_LEFT: 8,
     direction: function(e) {
         if (e <= 22.5 || e > 337.5) {
-            return Trig.RIGHT
+            return LV.Trig.RIGHT
         } else if (e <= 67.5) {
-            return Trig.DOWN_RIGHT
+            return LV.Trig.DOWN_RIGHT
         } else if (e <= 112.5) {
-            return Trig.DOWN
+            return LV.Trig.DOWN
         } else if (e <= 157.5) {
-            return Trig.DOWN_LEFT
+            return LV.Trig.DOWN_LEFT
         } else if (e <= 202.5) {
-            return Trig.LEFT
+            return LV.Trig.LEFT
         } else if (e <= 247.5) {
-            return Trig.UP_LEFT
+            return LV.Trig.UP_LEFT
         } else if (e <= 292.5) {
-            return Trig.UP
+            return LV.Trig.UP
         } else if (e <= 337.5) {
-            return Trig.UP_RIGHT
+            return LV.Trig.UP_RIGHT
         }
     }
 };
-var SwipeListener = function(e, t, n) {
+LV.SwipeListener = function(e, t, n) {
     this.element = e;
     this.startTime;
     this.offsetX = e.offsetLeft;
@@ -20122,7 +20256,7 @@ var SwipeListener = function(e, t, n) {
     if (typeof t == "function") t(this);
     else if (n && typeof n == "function") n(this)
 };
-SwipeListener.prototype = {
+LV.SwipeListener.prototype = {
     reset: function() {
         this.x = null;
         this.y = null;
@@ -20256,114 +20390,89 @@ SwipeListener.prototype = {
         if (this.options.onResize) this.options.onResize(this)
     }
 };
-var Browser = function(e) {
-    this.userAgent = navigator.userAgent;
-    this.ua = this.userAgent.toLowerCase();
-    this.name = null;
-    this.version = null;
-    this.versionFull = null;
-    if (window.orientation != undefined) this.mobile = true;
-    else this.mobile = false; if ("ontouchstart" in window || "onmsgesturechange" in window) this.touch = true;
-    else this.touch = false;
-    this.osDetected = function(e) {
-        this.os = {
-            name: e,
-            version: null,
-            versionFull: null
-        }
+(function() {
+    var e = 0;
+    var t = ["webkit", "moz"];
+    for (var n = 0; n < t.length && !window.requestAnimationFrame; ++n) {
+        window.requestAnimationFrame = window[t[n] + "RequestAnimationFrame"];
+        window.cancelAnimationFrame = window[t[n] + "CancelAnimationFrame"] || window[t[n] + "CancelRequestAnimationFrame"]
+    }
+    if (!window.requestAnimationFrame) window.requestAnimationFrame = function(t, n) {
+        var r = (new Date).getTime();
+        var i = Math.max(0, 16 - (r - e));
+        var s = window.setTimeout(function() {
+            t(r + i)
+        }, i);
+        e = r + i;
+        return s
     };
-    this.deviceDetected = function(e) {
-        this.device = {
-            name: e,
-            osVersion: null,
-            osVersionFull: null
-        }
+    if (!window.cancelAnimationFrame) window.cancelAnimationFrame = function(e) {
+        clearTimeout(e)
     };
-    if (this.ua.indexOf("iphone") != -1) {
-        this.deviceDetected("iphone")
-    } else if (this.ua.indexOf("ipad") != -1) {
-        this.deviceDetected("ipad")
-    } else if (this.ua.indexOf("android") != -1) {
-        this.deviceDetected("android");
-        if (this.ua.indexOf("version/") != -1) this.device.osVersion = this.ua.split("version/")[1].split(".")[0];
-        if (this.ua.indexOf("android ") != -1) this.device.osVersionFull = this.ua.split("android ")[1].split(";")[0]
-    }
-    if (this.device && (this.device.name == "iphone" || this.device.name == "ipad")) {
-        if (this.ua.indexOf("version/") != -1) this.device.osVersion = this.ua.split("version/")[1].split(".")[0];
-        if (this.userAgent.indexOf(" OS ")) {
-            if (this.userAgent.indexOf(" like ")) this.device.osVersionFull = this.userAgent.split(" OS ")[1].split(" like ")[0].split("_").join(".")
+
+    window.requestAnimFrame = function() {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(e) {
+            window.setTimeout(e, 1e3 / 60)
         }
-    }
-    this.ielt9 = false;
-    this.name = this.ua.match(/android/gi);
-    if (this.name == null) this.name = this.ua.match(/chrome/gi);
-    if (this.name == null) this.name = this.ua.match(/safari/gi);
-    if (this.name == null) this.name = this.ua.match(/firefox/gi);
-    if (this.name == null) this.name = this.ua.match(/msie/gi);
-    if (this.name && this.name instanceof Array) this.name = this.name[0];
-    switch (this.name) {
-        case "android":
-            if (this.ua.indexOf("version/") != -1) this.version = this.ua.split("version/")[1].split(".")[0];
-            if (this.ua.indexOf("android ") != -1) {
-                this.fullVersion = this.ua.split("android ")[1].split(";")[0]
+    }();
+
+})();
+//Analytics module
+LV.Analytics = {
+    type: "desktop.",
+    ready: true,
+    plus: function(e) {
+        if (!this.ready) return;
+        var t = e.split(".");
+        if (t.length == 1) {
+            if (this[e] != undefined) {
+                if (this[e] == true) return;
+                else this[e] = true
             }
-            break;
-        case "chrome":
-            if (this.ua.indexOf("chrome/") != -1) this.version = this.ua.split("chrome/")[1].split(".")[0];
-            if (this.ua.indexOf(" safari/") != -1) {
-                this.versionFull = this.ua.split(" chrome/")[1].split(" safari/")[0]
+        } else if (t.length == 2) {
+            if (this[t[0]] != undefined && this[t[0]][t[1]] != undefined) {
+                if (this[t[0]][t[1]] == true) return;
+                else this[t[0]][t[1]] = true
             }
-            break;
-        case "safari":
-            if (this.ua.indexOf("crios/") != -1) {
-                this.name = "chrome";
-                this.version = this.ua.split("crios/")[1].split(".")[0]
-            } else if (this.ua.indexOf("version/") != -1) {
-                this.version = this.ua.split("version/")[1].split(".")[0];
-                if (this.mobile) {
-                    if (this.ua.indexOf(" mobile/") != -1) {
-                        this.versionFull = this.ua.split("version/")[1].split(" mobile/")[0]
-                    }
-                } else {
-                    if (this.ua.indexOf(" safari/") != -1) {
-                        this.versionFull = this.ua.split("version/")[1].split(" safari/")[0]
-                    }
-                }
-            }
-            break;
-        case "firefox":
-            if (this.ua.indexOf("firefox/") != -1) {
-                this.version = this.ua.split("firefox/")[1].split(".")[0];
-                this.versionFull = this.ua.split("firefox/")[1]
-            }
-            break;
-        case "msie":
-            this.name = "ie";
-            if (this.ua.indexOf("msie ") != -1) this.version = this.ua.split("msie ")[1].split(".")[0];
-            else if (this.ua.indexOf("msie/") != -1) this.version = this.ua.split("msie/")[1].split(".")[0];
-            if (this.ua.indexOf("msie ") != -1) {
-                this.versionFull = this.ua.split("msie ")[1].split(";")[0]
-            }
-            if (this.version < 9) this.ielt9 = true;
-            break
-    }
-    if (this.device && this.device.osVersion) this.device.osVersion = Number(this.device.osVersion);
-    if (this.version) this.version = Number(this.version);
-    delete this.ua;
-    delete this.userAgent;
-    delete this.deviceDetected;
-    delete this.osDetected;
-    this.saveOrientation = function() {
-        this.orientation = window.orientation;
-        if (window.orientation == 0 || window.orientation == 180) this.layout = "portrait";
-        else this.layout = "landscape"
-    };
-    if (this.mobile) {
-        this.saveOrientation();
-        var t = function() {
-            this.saveOrientation();
-            if (this.onOrientationChange) this.onOrientationChange(this)
-        };
-        window.addEventListener("orientationchange", t.bind(this), false)
-    }
+        }
+        //$.post("analytics/plus/" + this.type + e)
+    },
+    work: {
+        viewed: false
+    },
+    journey: {
+        home: false,
+        work: false,
+        quoteA: false,
+        life: false,
+        quoteB: false,
+        software: false,
+        quoteC: false,
+        coding: false,
+        quoteD: false,
+        message: false,
+        career: false,
+        thanks: false,
+        curious: false,
+        satisfied: false
+    },
+    resized: false,
+    menu: {
+        viewed: false,
+        used: false
+    },
+    social: {
+        hover: false,
+        clicked: false
+    },
+    share: {
+        hover: false,
+        clicked: false,
+        google: false
+    },
+    devTools: false,
+    orientation: {
+        rotated: false
+    },
+    accelerometer: false
 };

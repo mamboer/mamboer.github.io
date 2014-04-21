@@ -1,4 +1,4 @@
-var SwipeListener = function(e, t, n) {
+LV.SwipeListener = function(e, t, n) {
     this.element = e;
     this.startTime;
     this.offsetX = e.offsetLeft;
@@ -30,7 +30,7 @@ var SwipeListener = function(e, t, n) {
     if (typeof t == "function") t(this);
     else if (n && typeof n == "function") n(this)
 };
-SwipeListener.prototype = {
+LV.SwipeListener.prototype = {
     reset: function() {
         this.x = null;
         this.y = null;

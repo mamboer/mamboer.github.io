@@ -1,4 +1,4 @@
-var Trig = {
+LV.Trig = {
     pothag: function(e, t) {
         var n = Math.sq(e);
         var r = Math.sq(t);
@@ -6,15 +6,15 @@ var Trig = {
         return Math.sqrt(i)
     },
     xFromAngleHypotenuse: function(e, t) {
-        return t * Math.cos(Trig.toRad(e))
+        return t * Math.cos(LV.Trig.toRad(e))
     },
     yFromAngleOpposite: function(e, t) {
-        return t * Math.tan(Trig.toRad(e))
+        return t * Math.tan(LV.Trig.toRad(e))
     },
     xyFromAngleHypotenuse: function(e, t) {
         var n = {};
-        n.x = Trig.xFromAngleHypotenuse(e, t);
-        n.y = Trig.yFromAngleOpposite(e, n.x);
+        n.x = LV.Trig.xFromAngleHypotenuse(e, t);
+        n.y = LV.Trig.yFromAngleOpposite(e, n.x);
         return n
     },
     toDegrees: function(e) {
@@ -25,16 +25,16 @@ var Trig = {
     },
     angle: function(e, t, n) {
         var r;
-        if (e instanceof Point) r = e.distance(t);
+        if (e instanceof LV.Point) r = e.distance(t);
         else r = {
             x: t.x - e.x,
             y: t.y - e.y
         };
-        var i = Trig.pothag(r.x, r.y);
+        var i = LV.Trig.pothag(r.x, r.y);
         var s = (Math.sq(r.y) + Math.sq(i) - Math.sq(r.x)) / (2 * r.y * i);
         s = Math.acos(s);
         if (n) {
-            s = Trig.toDegrees(s);
+            s = LV.Trig.toDegrees(s);
             if (e.x > t.x) {
                 s += 90;
                 if (isNaN(s)) s = 180
@@ -59,21 +59,21 @@ var Trig = {
     UP_LEFT: 8,
     direction: function(e) {
         if (e <= 22.5 || e > 337.5) {
-            return Trig.RIGHT
+            return LV.Trig.RIGHT
         } else if (e <= 67.5) {
-            return Trig.DOWN_RIGHT
+            return LV.Trig.DOWN_RIGHT
         } else if (e <= 112.5) {
-            return Trig.DOWN
+            return LV.Trig.DOWN
         } else if (e <= 157.5) {
-            return Trig.DOWN_LEFT
+            return LV.Trig.DOWN_LEFT
         } else if (e <= 202.5) {
-            return Trig.LEFT
+            return LV.Trig.LEFT
         } else if (e <= 247.5) {
-            return Trig.UP_LEFT
+            return LV.Trig.UP_LEFT
         } else if (e <= 292.5) {
-            return Trig.UP
+            return LV.Trig.UP
         } else if (e <= 337.5) {
-            return Trig.UP_RIGHT
+            return LV.Trig.UP_RIGHT
         }
     }
 };

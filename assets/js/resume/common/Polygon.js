@@ -1,11 +1,11 @@
-var Polygon = function(e, t) {
+LV.Polygon = function(e, t) {
     this.length = 0;
     this.addPoint(e);
     this.snap = null;
     this.svg = null;
     if (t) this.closePoly()
 };
-Polygon.prototype = {
+LV.Polygon.prototype = {
     addPoint: function(e) {
         if (!e) return;
         if (Array.isArray(e)) {
@@ -13,7 +13,7 @@ Polygon.prototype = {
                 this[this.length] = e[t];
                 this.length++
             }
-        } else if (e instanceof Point) {
+        } else if (e instanceof LV.Point) {
             this[this.length] = e;
             this.length++
         }
@@ -34,6 +34,6 @@ Polygon.prototype = {
     createSVG: function(e) {
         this.snap = e;
         this.svg = this.snap.polygon(this.getArray());
-        return this.svg
+        return this.svg;
     }
 };

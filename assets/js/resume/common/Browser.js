@@ -1,4 +1,5 @@
-var Browser = function(e) {
+// browser module
+LV.Browser = function(e) {
     this.userAgent = navigator.userAgent;
     this.ua = this.userAgent.toLowerCase();
     this.name = null;

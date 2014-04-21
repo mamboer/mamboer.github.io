@@ -1,8 +1,8 @@
-var Point = function(e, t) {
+LV.Point = function(e, t) {
     this.x = e;
     this.y = t
 };
-Point.prototype = {
+LV.Point.prototype = {
     distance: function(e) {
         return {
             x: this.distanceX(e),
@@ -16,7 +16,7 @@ Point.prototype = {
         return e.y - this.y
     },
     angle: function(e, t) {
-        return Trig.angle(this, e, t)
+        return LV.Trig.angle(this, e, t)
     },
     setXY: function(e, t) {
         this.x = e;
