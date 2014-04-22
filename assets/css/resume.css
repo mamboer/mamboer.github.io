@@ -105,6 +105,25 @@ div {
     font-weight:700;
     src:url(../fonts/Le_Super_Type_SemiBold.woff) format('woff')
 }
+
+/* S - icon fonts from http://www.iconfont.cn/*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot'); /* IE9*/
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg#uxiconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* E - icon fonts from http://www.iconfont.cn/*/
+
 #background {
     width:100%;
     height:100%;
@@ -2285,6 +2304,27 @@ a.twitter-share-button{visibility: hidden;}
     left:6.5px;
     opacity:0
 }
+.social-logo .fa{
+    font-size: 26px;
+    line-height: 52px;
+    width:52px;
+    text-align: center;
+}
+.social-logo {
+    color: white;
+    border-radius: 50%;
+    position: relative;
+}
+/*colors*/
+.social-bg-mail{background: #006CFF;}
+.social-bg-tw {background: #00ACF0;}
+.social-bg-fb,.social-bg-qq {background: #3B5997;}
+.social-bg-gp {background: #DB4F48;}
+.social-bg-ig {background: #447397;}
+.social-bg-li,.social-bg-gh {background: #007DB8;}
+.social-bg-yt,.social-bg-weibo {background: #D12E2E;}
+.social-bg-rss {background: #DF3D82;}
+
 #curious1 {
     height:2000px
 }
@@ -2453,6 +2493,7 @@ a.twitter-share-button{visibility: hidden;}
     .social-shadow {
         background-image:url('../img/resume/social-shadow.png')
     }
+    /*
     #social-mail .social-logo {
         background-image:url('../img/resume/social-mail.png')
     }
@@ -2477,6 +2518,7 @@ a.twitter-share-button{visibility: hidden;}
     #social-twitter .social-logo {
         background-image:url('../img/resume/social-twitter.png')
     }
+    */
     #bg {
         background-image:url('../img/resume/background-dof5.jpg')
     }

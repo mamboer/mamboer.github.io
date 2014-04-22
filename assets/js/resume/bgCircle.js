@@ -96,4 +96,16 @@
     };
 
 
+    LV.BackgroundCircle.render = function() {
+        if (LV.Utils.browser.mobile || LV.Utils.browser.touch) {
+            if (MobileMenu.showing || MobileLightbox.showing) {
+                requestAnimationFrame(LV.BackgroundCircle.render);
+                return
+            }
+        }
+        LV.BackgroundCircle.update();
+        requestAnimationFrame(LV.BackgroundCircle.render)
+    };
+
+
 })(jQuery);

@@ -55,5 +55,9 @@ LV.Analytics = {
     orientation: {
         rotated: false
     },
-    accelerometer: false
+    accelerometer: false,
+    googleClicked : function() {
+        this.plus("share.clicked");
+        this.plus("share.google");
+    }
 };
