@@ -271,6 +271,52 @@
             this.queue = new createjs.LoadQueue(true);
             this.queue.on("complete", this.onComplete, this);
             this.queue.on("progress", this.onProgress, this);
+
+            this._preloadDesktopResources();
+            this._preloadMobileResources();
+            delete this['_preloadDesktopResources'];
+            delete this['_preloadMobileResources'];
+
+        },
+        _preloadDesktopResources:function(){
+
+            if( ( LV.Utils.browser.touch || LV.Utils.browser.mobile ) ) return;
+
+            this.queue.loadManifest([{
+                src: "assets/img/resume/social-mail.png"
+            }, {
+                src: "assets/img/resume/social-linkedin.png"
+            }, {
+                src: "assets/img/resume/social-github.png"
+            }, {
+                src: "assets/img/resume/social-tumblr.png"
+            }, {
+                src: "assets/img/resume/social-vimeo.png"
+            }, {
+                src: "assets/img/resume/social-pinterest.png"
+            }, {
+                src: "assets/img/resume/social-instagram.png"
+            }, {
+                src: "assets/img/resume/social-twitter.png"
+            }]);
+            
+            this.initWorkImages();
+        },
+        _preloadMobileResources:function(){
+
+            if( !( LV.Utils.browser.touch || LV.Utils.browser.mobile ) ) return;
+
+            this.queue.loadManifest([{
+                src: "assets/img/resume/square1.jpg"
+            }, {
+                src: "assets/img/resume/square2.jpg"
+            }, {
+                src: "assets/img/resume/square3b.jpg"
+            }, {
+                src: "assets/img/resume/square4.jpg"
+            }, {
+                src: "assets/img/resume/square5.jpg"
+            }]);
         }
     };
 

@@ -85,25 +85,6 @@
         about: "<span>Phoenix Sunrise Goddess</span> - photoshop illustration"
     }]);
 
-    LV.preload.queue.loadManifest([{
-        src: "assets/img/resume/social-mail.png"
-    }, {
-        src: "assets/img/resume/social-linkedin.png"
-    }, {
-        src: "assets/img/resume/social-github.png"
-    }, {
-        src: "assets/img/resume/social-tumblr.png"
-    }, {
-        src: "assets/img/resume/social-vimeo.png"
-    }, {
-        src: "assets/img/resume/social-pinterest.png"
-    }, {
-        src: "assets/img/resume/social-instagram.png"
-    }, {
-        src: "assets/img/resume/social-twitter.png"
-    }]);
-    
-    LV.preload.initWorkImages();
 
     if (LV.Utils.browser.name != "ie") {
         console.log("/////////////////////////////////////////////////");

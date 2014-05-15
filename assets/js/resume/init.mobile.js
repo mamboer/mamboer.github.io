@@ -124,18 +124,6 @@
         height: 752
     }]);
 
-    LV.preload.queue.loadManifest([{
-        src: "assets/img/resume/square1.jpg"
-    }, {
-        src: "assets/img/resume/square2.jpg"
-    }, {
-        src: "assets/img/resume/square3b.jpg"
-    }, {
-        src: "assets/img/resume/square4.jpg"
-    }, {
-        src: "assets/img/resume/square5.jpg"
-    }]);
-
 
     var deviceLearning = true;
     var deviceY = [];
