@@ -1,10 +1,12 @@
 name: FASO
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 permalink: /:categories/:year:month:day/:title/
 author: levinwong
 safe: true
 paginate: 15
+paginate_path: /notes/page/:num
 exclude: ["less","node_modules"]
 encoding: utf-8
 githubid: 85879
+keywords: ["FASO","HTML5","CSS3","JS","JQUERY"]

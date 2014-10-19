@@ -1,52 +1,107 @@
 ---
 title: TIMELINE
-layout: page
+layout: clean
+description: Homepage of FASO.me
 ---
 
-<ul class="ilist">
-{% for post in paginator.posts %}
-  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
-  {% if year != y %}
-    {% assign year = y %}
-    <li class="ilist-seperator">{{ y }}</li>
-  {% endif %}
-  <li class="ilist-item">
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m-%d" }}</time>
-  </li>
-{% endfor %}
-</ul>
+<script src="/assets/js/libs/modernizr/modernizr.custom.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
 
-<div id="post-pagination" class="paginator">
 
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
-    <a href="/">&larrlp;前页</a>
-    {% else %}
-    <a href="/page{{paginator.previous_page}}">&larrlp;前页</a>
-    {% endif %}
-  {% else %}
-    <span class="previous disabled">&larrlp;前页</span>
-  {% endif %}
-
-      {% if paginator.page == 1 %}
-      <span class="current-page">1</span>
-      {% else %}
-      <a href="/">1</a>
-      {% endif %}
-
-    {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <span class="current-page">{{count}}</span>
-      {% else %}
-      <a href="/page{{count}}">{{count}}</a>
-      {% endif %}
-    {% endfor %}
-
-  {% if paginator.next_page %}
-    <a class="next" href="/page{{paginator.next_page}}">后页&rarrlp;</a>
-  {% else %}
-    <span class="next disabled" >后页&rarrlp;</span>
-  {% endif %}
-  (共{{ paginator.total_posts }}篇)
-</div>
+<div class="container"> 
+    <div id="bl-main" class="bl-main">
+        <section>
+            <div class="bl-box">
+                <h2 class="bl-icon bl-icon-about">About</h2>
+            </div>
+            <div class="bl-content">
+                <h2>About Me</h2>
+                <p>View my full profile at <a href="/about/" target="_blank">ABOUT</a></p>
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <section id="bl-work-section">
+            <div class="bl-box">
+                <h2 class="bl-icon bl-icon-works">Works</h2>
+            </div>
+            <div class="bl-content">
+                <h2>My Works</h2>
+                <p>Some of my works from 2011 to now.</p>
+                <ul id="bl-work-items">
+                    <li data-panel="panel-1"><a href="#"><img src="/assets//img/home/1.jpg" /></a></li>
+                    <li data-panel="panel-2"><a href="#"><img src="/assets//img/home/2.jpg" /></a></li>
+                    <li data-panel="panel-3"><a href="#"><img src="/assets/img/home/3.jpg" /></a></li>
+                    <li data-panel="panel-4"><a href="#"><img src="/assets/img/home/4.jpg" /></a></li>
+                </ul>
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <section>
+            <div class="bl-box">
+                <h2 class="bl-icon bl-icon-blog">Notes</h2>
+            </div>
+            <div class="bl-content">
+                <h2>My Latest Notes</h2>
+                <article>
+                {% for post in paginator.posts %}
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.excerpt }} <a href="{{ post.url }}" target="_blank">Read more</a></p>
+                {% endfor %}
+               </article>
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <section>
+            <div class="bl-box">
+                <h2 class="bl-icon bl-icon-contact">Contact</h2>
+            </div>
+            <div class="bl-content">
+                <h2>Get in touch</h2>
+                <p>Follow my github at <a href="http://github.io/mamboer" target="_blank">Github.com/mamboer</a></p>
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <!-- Panel items for the works -->
+        <div class="bl-panel-items" id="bl-panel-work-items">
+            <div data-panel="panel-1">
+                <div>
+                    <img src="/assets/img/home/1.jpg" />
+                    <h3>Fixie bespoke</h3>
+                    <p>Iphone artisan direct trade ethical Austin. Fixie bespoke banh mi ugh, deep v vinyl hashtag. Tumblr gentrify keffiyeh pop-up iphone twee biodiesel. Occupy american apparel freegan cliche. Mustache trust fund 8-bit jean shorts mumblecore thundercats. Pour-over small batch forage cray, banjo post-ironic flannel keffiyeh cred ethnic semiotics next level tousled fashion axe. Sustainable cardigan keytar fap bushwick bespoke.</p>
+                </div>
+            </div>
+            <div data-panel="panel-2">
+                <div>
+                    <img src="/assets/img/home/2.jpg" />
+                    <h3>Chillwave mustache</h3>
+                    <p>Squid vinyl scenester literally pug, hashtag tofu try-hard typewriter polaroid craft beer mlkshk cardigan photo booth PBR. Chillwave 90's gentrify american apparel carles disrupt. Pinterest semiotics single-origin coffee craft beer thundercats irony, tumblr bushwick intelligentsia pickled. Narwhal mustache godard master cleanse street art, occupy ugh selfies put a bird on it cray salvia four loko gluten-free shoreditch.</p>
+                </div>
+            </div>
+            <div data-panel="panel-3">
+                <div>
+                    <img src="/assets/img/home/3.jpg" />
+                    <h3>Austin hella</h3>
+                    <p>Ethical cray wayfarers leggings vice, seitan banksy small batch ethnic master cleanse. Pug chillwave etsy, scenester meh occupy blue bottle tousled blog tonx pinterest selvage mixtape swag cosby sweater. Synth tousled direct trade, hella Austin craft beer ugh chambray.</p>
+                </div>
+            </div>
+            <div data-panel="panel-4">
+                <div>
+                    <img src="/assets/img/home/4.jpg" />
+                    <h3>Brooklyn dreamcatcher</h3>
+                    <p>Fashion axe 90's pug fap. Blog wayfarers brooklyn dreamcatcher, bicycle rights retro YOLO. Wes anderson lomo 90's food truck 3 wolf moon, twee jean shorts. Iphone small batch twee wolf yr before they sold out. Brooklyn echo park cred, portland pug selvage flannel seitan tousled mcsweeney's.</p>
+                </div>
+            </div>
+            <nav>
+                <span class="bl-next-work">&gt; Next Project</span>
+                <span class="bl-icon bl-icon-close"></span>
+            </nav>
+        </div>
+    </div>
+</div><!-- /container -->
+<script src="/assets/js/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/assets/js/home/boxlayout.js"></script>
+<script>
+    $(function() {
+        Boxlayout.init();
+    });
+</script>
