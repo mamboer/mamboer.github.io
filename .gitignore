@@ -3,3 +3,4 @@ _site
 build
 package
 node_modules
+.DS_Store
