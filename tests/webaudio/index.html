@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="$1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>WebAudio Tests</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="mainWrap">
+            <h1>web audio api</h1>
+        </div>
+    </body>
+    <!-- <script src="bower_components/buzz/dist/buzz.js"></script> -->
+    <script src="js/web_audio_api.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function(){
+
+            // HTML5 tag lib (trash)
+            // var ambient = new buzz.sound( "./sounds/dub_night", {
+            //     formats: [ "mp3", "aac" ]
+            // });
+            // var belka = new buzz.sound( "./sounds/belka", {
+            //     formats: [ "mp3", "aac" ]
+            // });
+
+            // ambient.play()
+            //     .fadeIn()
+            //     .loop();
+            //     // .bind( "timeupdate", function() {
+            //     //    var timer = buzz.toTimer( this.getTime() );
+            //     //    document.getElementById( "timer" ).innerHTML = timer;
+            //     // });
+
+            // var belka = new buzz.sound( "./sounds/belka", {
+            //     formats: [ "mp3", "aac" ]
+            // });
+
+            // setInterval(function(){
+            //     belka.play();
+            // }, 5000)
+
+            var belka, ambient;
+
+            belka = new WebAudioAPISound("/sounds/belka", {
+                loop:true
+            }, function(){
+                console.log('sound loaded');
+                belka.play();
+            });
+            // ambient = new WebAudioAPISound("/sounds/dub_night", null, null);
+
+            // ambient.play();
+
+            // belka.play();
+            // setInterval(function(){
+            //     belka.play();
+            // }, 10000)
+
+            // setTimeout(function(){
+            //     ambient.play();
+            // }, 10000);
+
+        }
+
+    </script>
+</html>
