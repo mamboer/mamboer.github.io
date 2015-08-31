@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="$1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Touchmove Tests</title>
+        <style>
+        *,*:after,*:before{box-sizing:border-box;}
+        html,body {display:block;height:100%;font-size:16px;}
+        * {margin:0;padding:0;}
+        h1 {margin:20px 0 15px; font-size:24px;}
+        h3 {margin:15px 0 10px; font-size:18px;}
+        .card {width:100%;height:100%;text-align:center;padding:20px;}
+        .card1 {background:#ddd;}
+        .card2 {background:#23232e;color:#fff;}
+        .tip {background:#23232e;color:#fff;font-size:14px;padding:5px;position:fixed:top:0;left:0;width:100%;line-height:16px;text-align:center;}
+        </style>
+        <script src="http://zeptojs.com/zepto.min.js"></script>
+    </head>
+    <body>
+        <div class="tip" id="tip"></div>
+        <div class="card card1">
+            <h1>touchmove parallax</h1>
+            <img src="/assets/img/nologo.png"/>
+        </div>
+        <div class="card card2">
+            <h3>card2</h3>
+        </div>
+    </body>
+    <script>
+
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        } 
+
+        var safeTouchmove = function(el, opts){
+            this.el = el;
+            this.$el = $(el);
+            this.opts = $.extend({}, {
+                threshold:10,
+                debounceDuration:500
+            }, opts||{});
+            this.init();
+            
+        }; 
+        safeTouchmove.prototype = {
+            init:function(){
+                this.startX = 0;
+                this.startY = 0;
+                this.lastX = 0;
+                this.lastY = 0;
+                this.distX = 0;
+                this.distY = 0;  
+                this.initEvts();  
+            },
+            initEvts:function(){
+                var me = this,
+                    opts = this.opts;
+                this.el.addEventListener('touchstart',function(e){
+                    var touchObj = e.changedTouches[0];
+                    me.startX = parseInt(touchObj.clientX);
+                    me.startY = parseInt(touchObj.clientY);
+                    e.preventDefult();
+                },  false);
+                this.el.addEventListener('touchmove', debounce(function(e){
+                    var touchObj = e.changedTouches[0];
+                    me.distX = parseInt(touchObj.clientX) - me.startX;
+                    me.distY = parseInt(touchObj.clientY) - me.startY;
+                    if(me.isSwipeUp()){
+                        me.$el.trigger('stm:up',[me, me.distY]);
+                    }
+                    if(me.isSwipDown()){
+                        me.$el.trigger('stm:down',[me, me.distY]);
+                    }
+                    if(me.isSwipeLeft()){
+                        me.$el.trigger('stm:left',[me, me.distX]);
+                    }
+                    if(me.isSwipeRight()){
+                        me.$el.trigger('stm:right',[me, me.distX]);
+                    }
+                    e.preventDefault();
+                }, opts.debounceDuration), false);
+                this.el.addEventListener('touchend', function(e){
+                    var touchObj = e.changedTouches[0];
+                    me.lastX = parseInt(touchObj.clientX);
+                    me.lastY = parseInt(touchObj.clientY);
+                    e.preventDefault();
+                }, false);
+            },
+            isSwipeV:function(){
+                var opts = this.opts,
+                    yep = (Math.abs(me.distY) - Math.abs(me.distX)) > opts.threshold;
+                return yep;
+            },
+            isSwipeUp:function(){
+                var yep = this.isSwipeV() && this.distY<0;
+                return yep;
+            },
+            isSwipeDown:function(){
+                var yep = this.isSwipeV() && this.distY > 0;
+                return yep;
+            },
+            isSwipeLeft: function(){
+                var yep = !this.isSwipeV() && this.distX<0;
+                return yep;
+            },
+            isSwipeRight: function(){
+                var yep = !this.isSwipeV() && this.distX>0;
+                return yep;
+            },
+            on:function(evt,cbk){
+                this.$el.on(evt,cbk);
+                return this;
+            }
+        };
+
+        //demos
+        var $tip = $('#tip');
+
+        var stmBody = new safeTouchmove(document.body, {
+
+        }).on('stm:up',function(e,stm, val){
+            $tip.html('stm:up ' + val);
+        }).on('stm:down',function(e,stm, val){
+            $tip.html('stm:down '+ val);
+        });
+
+    </script>
+</html>
