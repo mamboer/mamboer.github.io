@@ -15,7 +15,7 @@
         .card {width:100%;height:100%;text-align:center;padding:20px;}
         .card1 {background:#ddd;}
         .card2 {background:#23232e;color:#fff;}
-        .tip {background:#23232e;color:#fff;font-size:14px;padding:5px;position:fixed:top:0;left:0;width:100%;line-height:40px;text-align:center;}
+        .tip {background:rgba(0,0,0,.8);color:#fff;font-size:14px;padding:5px;position:fixed;bottom:0;left:0;width:100%;height:40px;line-height:40px;text-align:center;}
         </style>
         <script src="http://zeptojs.com/zepto.min.js"></script>
     </head>
@@ -23,15 +23,16 @@
         <div class="tip" id="tip"></div>
         <div class="card card1">
             <h1>touchmove parallax</h1>
-            <img src="/assets/img/nologo.png"/>
+            <img src="img/logo.png"/>
         </div>
         <div class="card card2">
             <h3>card2</h3>
         </div>
     </body>
     <script>
+    (function(exports, $){
 
-        function debounce(func, wait, immediate) {
+        function debouncer(func, wait, immediate) {
             var timeout;
             return function() {
                 var context = this, args = arguments;
@@ -44,14 +45,15 @@
                 timeout = setTimeout(later, wait);
                 if (callNow) func.apply(context, args);
             };
-        } 
+        }
 
         var safeTouchmove = function(el, opts){
             this.el = el;
             this.$el = $(el);
             this.opts = $.extend({}, {
+                preventDefault:false,
                 threshold:10,
-                debounceDuration:500
+                debounceDuration:100
             }, opts||{});
             this.init();
             
@@ -73,35 +75,42 @@
                     var touchObj = e.changedTouches[0];
                     me.startX = parseInt(touchObj.clientX);
                     me.startY = parseInt(touchObj.clientY);
-                    e.preventDefult();
+                    if(opts.preventDefault){
+                        e.preventDefault();
+                    }
                 },  false);
-                this.el.addEventListener('touchmove', debounce(function(e){
+                this.el.addEventListener('touchmove', debouncer(function(e){
                     var touchObj = e.changedTouches[0];
                     me.distX = parseInt(touchObj.clientX) - me.startX;
                     me.distY = parseInt(touchObj.clientY) - me.startY;
                     if(me.isSwipeUp()){
-                        me.$el.trigger('stm:up',[me, me.distY]);
+                        me.$el.trigger('stm:up',[me, -me.distY]);
                     }
-                    if(me.isSwipDown()){
+                    if(me.isSwipeDown()){
                         me.$el.trigger('stm:down',[me, me.distY]);
                     }
                     if(me.isSwipeLeft()){
-                        me.$el.trigger('stm:left',[me, me.distX]);
+                        me.$el.trigger('stm:left',[me, -me.distX]);
                     }
                     if(me.isSwipeRight()){
                         me.$el.trigger('stm:right',[me, me.distX]);
                     }
-                    e.preventDefault();
+                    if(opts.preventDefault){
+                        e.preventDefault();
+                    }
                 }, opts.debounceDuration), false);
                 this.el.addEventListener('touchend', function(e){
                     var touchObj = e.changedTouches[0];
                     me.lastX = parseInt(touchObj.clientX);
                     me.lastY = parseInt(touchObj.clientY);
-                    e.preventDefault();
+                    if(opts.preventDefault){
+                        e.preventDefault();
+                    }
                 }, false);
             },
             isSwipeV:function(){
                 var opts = this.opts,
+                    me = this,
                     yep = (Math.abs(me.distY) - Math.abs(me.distX)) > opts.threshold;
                 return yep;
             },
@@ -127,11 +136,14 @@
             }
         };
 
+        exports.SafeTouchmove = safeTouchmove;
+
+    })(window, Zepto);
         //demos
         var $tip = $('#tip');
 
-        var stmBody = new safeTouchmove(document.body, {
-
+        var stmBody = new SafeTouchmove(document.body, {
+            debounceDuration:10
         }).on('stm:up',function(e,stm, val){
             $tip.html('stm:up ' + val);
         }).on('stm:down',function(e,stm, val){
