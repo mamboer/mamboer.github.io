@@ -1,0 +1,89 @@
+- name: hexo-theme-o2
+  desc: 凹凸实验室为aotu.io官方网站量身定制的一套简洁扁平风格的HEXO主题.
+  link: https://github.com/o2team/hexo-theme-o2
+  preview: http://aotu.io
+  logo: /img/home/theme.png
+  bgc: DC763D
+  tc: ffffff
+  tags:
+    - hexo
+    - theme
+- name: MAC Full-Stack
+  desc: MAC全栈开发环境搭建指引可以让你快速将你的MAC搭建成强悍的全栈开发利器.
+  link: https://github.com/o2team/mac
+  preview: http://aotu.io/mac
+  cover: /img/home/fullstack.jpg
+  bgc: B17BA8
+  tags:
+    - mac
+    - guide
+- name: REM HTML5 Template
+  desc: 这是一个全部使用REM尺寸单元做多设备适配的HTML5移动页面模板，利用motion.js让你飞一般的制作HTML5场景应用。
+  link: https://github.com/mamboer/rem-html5
+  preview: https://github.com/mamboer/rem-html5
+  logo: /img/home/rem-html.png
+  bgc: ed5d53
+  tags:
+    - HTML5
+    - REM
+    - Template
+    - Motion.JS
+- name: M(N)otice.JS
+  desc: Simple Notification Component With Magical Css3 Effects。
+  link: https://github.com/mamboer/motice
+  preview: http://faso.me/motice
+  logo: /img/home/motice.png
+  bgc: F550A5
+  tags:
+    - CSS3
+    - Notification
+    - Motice
+- name: motion.js
+  desc: Motion是一款基于ZeptoJS，为移动终端Web应用量身定制的组件库，重点开发结合HTML5新特征的创新实用组件。
+  link: https://github.com/tgideas/motion
+  preview: http://tgideas.github.io/motion/
+  logo: /img/home/motion.png
+  bgc: 00d07f
+  tags:
+    - Javascript
+    - HTML5
+    - Motion.JS
+- name: Mobox.JS
+  desc: MOBOX = Modern Dialog + Pop Box + Overlay + Extensible CSS3 Effects.
+  link: https://github.com/mamboer/mobox
+  preview: http://faso.me/mobox/demo.html
+  logo: /img/home/mobox.png
+  bgc: 6190E8
+  tags:
+    - CSS3
+    - Dialog
+    - Overlay
+- name: J
+  desc: A slim javascript module management framework.
+  link: https://github.com/mamboer/j
+  preview: http://faso.me/j/
+  logo: /img/home/js.png
+  bgc: efdb4f
+  tags:
+    - Javascript
+    - J.JS
+- name: 天天炫斗宝典
+  desc: 天天炫斗官方资讯APP，也是tgideas的第一个原生Android APP。后来因为手游资讯运营策略转向游戏内嵌运营，此类APP不再单独运营。
+  link: https://github.com/mamboer/tgiapp1
+  preview: http://android.myapp.com/myapp/detail.htm?apkName=com.tencent.tgiapp1
+  logo: /img/home/ttxd.png
+  bgc: D08AC2
+  tags:
+    - 天天炫斗
+    - Android
+- name: hostspirit
+  desc: A host management tool building on node-webkit for windows users.
+  link: https://github.com/mamboer/hostspirit
+  preview: https://github.com/mamboer/hostspirit
+  logo: /img/home/host.png
+  bgc: FDAC4F
+  tags:
+    - hostspirit
+    - host工具
+    - node-webkit
+    - nwjs

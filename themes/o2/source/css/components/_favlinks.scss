@@ -1,0 +1,34 @@
+.favlinks-list {
+    list-style: none;
+    padding: 0;
+
+    > li {
+        a {
+            display: block;
+            border-bottom: 0;
+
+            h3 {
+                @include vendor('transition', 'color #{_duration(transition)} ease');
+                font-size: 0.7em;
+            }
+
+            p {
+                font-family: _font(family-heading);
+                font-size: 0.6em;
+                font-weight: _font(weight-heading);
+                letter-spacing: _font(kerning-heading);
+                letter-spacing: _size(letter-spacing-alt);
+                margin-bottom: 0;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            &:hover {
+                h3 {
+                    color: _palette(accent);
+                }
+            }
+        }
+        
+    }
+}

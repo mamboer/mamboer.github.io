@@ -1,0 +1,67 @@
+.intro {
+    &-logo {
+        border-bottom: 0;
+        display: inline-block;
+        margin: 0 0 (_size(element-margin) * 0.5) 0;
+        overflow: hidden;
+        position: relative;
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &-title {
+        font-size: 2em;
+        font-weight: _font(weight-heading-extrabold);
+    	.dark & {
+			color: _palette(fg-light);
+		}
+	}
+
+    &-subtitle {
+        font-size: 0.8em;
+        text-transform:none;
+    }
+
+    @include breakpoint(large) {
+        margin: 0 0 _size(section-spacing) 0;
+        text-align: center;
+
+        &-title {
+            font-size: 2em;
+        }
+
+        &-subtitle {
+            font-size: 0.7em;
+        }
+    }
+
+    @include breakpoint(small) {
+        margin: 0 0 _size(section-spacing-small) 0;
+        padding: 1.25em 0;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        &-logo {
+            margin: 0 0 (_size(element-margin) * 0.25) 0;
+        }
+
+        &-title {
+            font-size: 1.25em;
+        }
+        &-subtitle {
+            line-height: 2;
+        }
+        &-header {
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

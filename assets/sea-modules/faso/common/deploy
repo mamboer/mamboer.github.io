@@ -1,7 +1,0 @@
-spm build
-rm -rf 1.0.1
-mkdir  1.0.1
-cp     dist/*.* 1.0.1
-echo
-echo   " deploy to 1.0.1"
-echo

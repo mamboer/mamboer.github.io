@@ -1,0 +1,53 @@
+@mixin root-padding {
+    padding-left: _size(section-spacing-small);
+    padding-right: _size(section-spacing-small);
+    padding-top: (_size(section-spacing) * 1.5);
+    padding-bottom: (_size(section-spacing) * 1.5);
+    @include breakpoint(xxlarge-up) {
+        padding-top: (_size(section-spacing) * 1.5);
+        padding-bottom: (_size(section-spacing) * 1.5);
+    }
+    @include breakpoint(xlarge) {
+        padding-top: _size(section-spacing);
+        padding-bottom: _size(section-spacing);
+    }
+    @include breakpoint(small) {
+        padding-top: _size(section-spacing-small);
+        padding-bottom: _size(section-spacing-small);
+    }
+    @include breakpoint(xsmall) {
+        padding-top: _size(section-spacing-xsmall);
+        padding-bottom: _size(section-spacing-xsmall);
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+.root {
+    @include vendor('display', 'flex');
+    @include vendor('flex-direction', 'row-reverse');
+    @include vendor('transition', 'opacity #{_duration(menu)} ease');
+    @include root-padding();
+    margin: 0 auto;
+    max-width: 100%;
+    opacity: 1;
+    width: 100%;
+    background-color: #fff;
+    
+
+    .page-post-detail & {
+        display:block;
+    }
+    
+
+    @include breakpoint(large) {
+        display: block;
+    }
+    
+}
+
+.page-wrap {
+    @include breakpoint(small) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

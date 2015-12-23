@@ -1,0 +1,47 @@
+.page {
+    &-index {
+        .pagination {
+            display: block;
+            @include breakpoint(large) {
+                display: none;
+            }
+        }
+        .mini-posts-wrap {
+            .pagination {
+                @include breakpoint(large) {
+                    display: block;
+                }
+                @include breakpoint(large-up) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-tag {
+        .page-wrap {
+            margin-top: _size(section-spacing);
+            @include breakpoint(small) {
+                padding-top: _size(section-spacing);
+                margin-top: 0;
+                background-color: #fff;
+            }
+            @include breakpoint(xsmall) {
+                padding-top: _size(section-spacing-small);
+                .btn-goback {
+                    width: 100%;
+                    margin-bottom: _size(element-margin);
+                }
+            }
+        }
+    }
+}
+
+.highlight {
+    @include breakpoint(small) {
+        padding: 15px 10px;
+        .gutter pre {
+            padding-right: 10px;
+        }
+    }
+}

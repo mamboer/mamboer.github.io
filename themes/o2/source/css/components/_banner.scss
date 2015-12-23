@@ -1,0 +1,42 @@
+.banner {
+    position:relative;
+    &-bg {
+        position: absolute;
+        z-index: 1;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("../img/ball_1408.png") no-repeat;
+        background-size: cover;
+        background-position: center 80%;
+        opacity: 0.02;
+    }
+    background-color: _palette(bg-primary);
+    .dark &{
+        background-color: _palette(bg-dark);
+    }
+    transition: background-color ease 1s;
+    &-inner {
+        z-index:3;
+    }
+    &-ball {
+        z-index:2;
+        position:absolute;
+    }
+    &-pic {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 410px;
+        img {
+            max-width: 100%;
+        }
+        @include breakpoint(small) {
+            height: 350px;
+        }
+        @include breakpoint(xsmall) {
+            height: 200px;
+        }
+    }
+}

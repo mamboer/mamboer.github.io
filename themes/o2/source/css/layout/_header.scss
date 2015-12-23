@@ -1,0 +1,126 @@
+body {
+    padding-top: $navbar-height;
+}
+.navbar-toggle {
+    border-color: _palette(border);
+    .icon-bar {
+        background-color: _palette(bg-primary);
+    }
+}
+.navbar-brand {
+    padding-top: ($navbar-height - $logo-height)/2;
+    vertical-align: top;
+    img {
+        height: $logo-height;
+    }
+}
+@mixin header-anchor {
+    >li >a {
+        &:hover,&:focus {
+            color: _palette(accent);
+            background-color: transparent;
+        }
+    }
+}
+.header {
+    margin-bottom: 0;
+    border-bottom: 0;
+    box-shadow: 0 1px 2px _palette(bg-primary);
+    background-color: _palette(bg);
+    //border-bottom: solid 1px _palette(border);
+    z-index: _misc(z-index-base);
+    .app-fullscreen & {
+        border-top: solid 1px _palette(border);
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+        border: none;
+    }
+    form {
+        margin: 0;
+    }
+    input {
+        display: inline-block;
+        height: $header-input-height;
+        margin-top: ($navbar-height - $header-input-height)/2;
+        vertical-align: top;
+        @include breakpoint(medium-small) {
+            margin-top: 0;
+        }
+    }
+    &-links {
+        @include header-anchor();
+        .open >a {
+            color: _palette(accent);
+            background-color: transparent;
+            box-shadow: 0 1px 2px _palette(border);
+            &:hover, &:focus {
+                color: _palette(accent);
+                background-color: transparent;
+            }
+        }
+        &-main {
+            margin-left: 1em;
+            .active {
+                a {
+                    &:after {
+                        position:absolute;
+                        content:' ';
+                        bottom: 0;
+                        left: 0;
+                        height:2px;
+                        width: 100%;
+                        background-color: _palette(bg-primary);
+                    }
+                }
+            }
+            @include breakpoint(medium-small){
+                margin-left: 0;
+                .active {
+                    a {
+                        &:after {
+                            width: 2px;
+                            height: 50%;
+                            top:25%;
+                            bottom: auto;
+                        }
+                    }
+                }
+            }
+        }
+        &-extra {
+            margin-left: 0;
+        }
+
+    }
+}
+.search {
+    &-icon {
+        float:left;
+    }
+    &-form {
+        @include vendor('transition', 'all 0.5s ease');
+        float:left;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        white-space: nowrap;
+        &.visible {
+            max-width: 12.5em;
+            opacity: 1;
+            padding: 0 0.5em 0 0;
+        }
+        &-ipt {
+            &.error {
+                box-shadow:none !important;
+                border-color: _palette(highlight) !important;
+            }
+        }
+    }
+
+    &-wrap {
+        @include clearfix();
+    }
+}

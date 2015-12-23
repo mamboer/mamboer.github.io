@@ -1,4 +1,0 @@
-default:
-    - 'concurrent:first'
-    - 'concurrent:second'
-    - 'concurrent:three'

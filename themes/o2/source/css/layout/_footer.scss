@@ -1,0 +1,22 @@
+.footer {
+    .icons {
+        color: _palette(fg-light);
+    }
+    &-link {
+        width:32px;
+        height:32px;
+        line-height:32px;
+        text-align: center;
+        display: inline-block;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    &-sec {
+        color: _palette(fg-light);
+        font-family: _font(family-heading);
+        font-size: 0.6em;
+        font-weight: _font(weight-heading);
+        letter-spacing: _font(kerning-heading);
+        text-transform: uppercase;
+    }
+}

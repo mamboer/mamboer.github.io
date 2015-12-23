@@ -1,12 +1,125 @@
-name: FASO
-markdown: redcarpet
-highlighter: pygments
-permalink: /:categories/:year:month:day/:title/
-author: levinwong
-safe: true
-paginate: 15
-paginate_path: /notes/page/:num
-exclude: ["less","node_modules"]
-encoding: utf-8
-githubid: 85879
-keywords: ["FASO","HTML5","CSS3","JS","JQUERY"]
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Faso.ME
+subtitle: Fire And Sword Of ME
+subtitle_desc: Fire And Sword Of ME
+slogan: My Infinite Fire And Sword
+keywords: 火与剑之歌, 火与剑, Faso, 前端开发, 全栈开发, LV主唱大人
+description: |
+    火与剑(faso.me)之歌, FROM 1984 TO UNKNOWN.
+author: LV主唱大人
+language: zh-cn
+timezone: UTC
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://faso.me
+root: /
+permalink: notes/:year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: notes
+category_dir: cates
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - 'tests/**'
+
+# Writing
+new_post_name: :year-:month-:day-:title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: dddd, MoDo YYYY
+time_format: HH:mm:ss
+
+# generator-index
+index_generator:
+  per_page: 8
+  order_by: -date
+
+# tag generator
+## https://github.com/hexojs/hexo-generator-tag
+tag_generator:
+  per_page: 6
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 6
+pagination_dir: page
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+## Themes: http://hexo.io/themes/
+theme: o2
+
+# Feeds
+## https://www.npmjs.com/package/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: false
+
+# SASS
+## https://www.npmjs.com/package/hexo-renderer-sass
+node_sass:
+  debug: false
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+# lunr
+lunr:
+  field: all
+  path: assets/lunr/
+
+# Deployment
+## Docs: http://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:mamboer/mamboer.github.io.git
+  branch: master
+
+# Disqus
+disqus_shortname:
+
+# Analytics
+baidu_analytics: fdde8e44c3589b0ffe7df504b1a3bd7a
+google_analytics:
+
+# Social
+twitter: o2circle
+github:
+  user: mamboer
+  repo: mamboer.github.io
+
+# O2 Theme Customation
+logo_url: img/apple-touch-icon-120x120.png
+post_bgi_url: ../img/common/post-bg.png

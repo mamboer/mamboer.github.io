@@ -1,0 +1,109 @@
+.sec {
+	padding-bottom: _size(section-spacing) * 1.5;
+    &-heading, &-main, &-footer {
+		position: relative;
+		z-index:2;
+	}
+	&-heading {
+		padding: (_size(section-spacing) * 1.5) 0 (_size(section-spacing) * 1.2);
+		text-align: center;
+		&-main {
+			font-size: 1.3em;
+		}
+		&-sub {
+			margin-bottom: 0;
+		}
+        @include breakpoint(xsmall){
+            padding: _size(element-margin) 0;
+        }
+	}
+	&-footer {
+		padding-bottom: 0;
+	}
+	&-actions {
+		text-align: center;
+	    margin-bottom: 0 !important;
+    }
+	&-cases {
+		background-color: #fff;
+	}
+	&-posts {
+		.home-posts {
+			margin-bottom: _size(element-margin);
+            @include breakpoint(xsmall){
+                margin-bottom: 0;
+            }
+		}
+        .sec-heading-main {
+            .dark & {
+                color: _palette(fg-light);
+            }
+        }
+        .dark & .button {
+            color: _palette(fg-light);
+        }
+	}
+	&-bg {
+		position:absolute;
+		z-index:1;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
+	&-dark {
+		color: #fff;
+		.sec-heading-main {
+			color: #fff;
+		}
+		a {
+			color: #fff;
+		}		
+	}
+	&-about {
+		position:relative;
+		min-height: 400px;
+		@include breakpoint(small){
+            min-height: auto;
+        }
+        .sec-bg1 {
+			background-color: #fff;
+		}
+		.about-pic {
+			width: 160px;
+			height: 160px;
+			margin-left: auto;
+			margin-right: auto;
+			img {
+				max-width:100%;
+				border-radius: 50%;
+			}
+		}
+		.about-actions {
+			text-align:center;
+			margin-bottom: 0;
+		}
+	}
+	&-follow {
+		position:relative;
+		min-height: 400px;
+		.sec-bg1 {
+			background-color: #45afaf;
+		}
+		.sec-bg2 {
+			background-image: url(../img/ball_1408.png);
+			opacity:0.02;
+		}	
+		.follow-icon {
+			width:24px;
+			height:24px;
+			vertical-align: -6px;	
+		}
+		.follow-acount {
+			font-size: 0.8em;
+		}
+	}
+}
