@@ -20,7 +20,7 @@ author:
 
 ## Rule 1 利用原型链来定义类的方法
 
-
+下面的代码示例是一个反面案例，在类`baz.Bar`的构造器里面定义方法`foo`，会导致每次实例化`baz.Bar`时
 
 ## 提交
 git tracked的是修改，而不是文件
@@ -97,3 +97,29 @@ git tracked的是修改，而不是文件
     $ git push origin --tags
 
 注意：本文Fork自 [yikun.github.io](http://yikun.github.io/)，[凹凸实验室](http://aotu.io)作进一步完善。
+
+git clone https://github.com/madeye/shadowsocks-libev.git
+cd shadowsocks-libev
+./configure
+make && make install
+
+{
+    "server":"servier_ip",
+    "server_port":65432,
+    "password":"password",
+    "timeout":60,
+    "method":"rc4-md5"
+}
+
+echo "/usr/local/bin/ss-server -c /home/***/config.json -f /tmp/ss-server.pid" >> /etc/rc.local
+
+vi /etc/rc.local
+
+# 在配置文件后加上服务器配置信息
+[inet_http_server]
+port = 127.0.0.1:9001
+username = user
+password = 123
+
+# 最后不要忘了reload使之生效！
+supervisorctl reload
