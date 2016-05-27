@@ -19,7 +19,6 @@ module.exports = function(){
 		.pipe($.if('*.css', $.postcss([
 			cssnano()
 		])))
-		.pipe($.if('*.css', $.minifyCss()))
 		.pipe($.if('*.js', $.uglify()))
 		.pipe($.if('*.html', $.htmlMinifier(htmlMinifierOptions)))
 		.pipe(gulp.dest('public'));

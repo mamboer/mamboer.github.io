@@ -11,6 +11,7 @@
 @import '_FontAwesome/font-awesome';
 @import 'components/fonts';
 // 3Party Libs
+@import 'highlight/vars';
 @import 'highlight/tomorrow';
 
 // Base.
@@ -46,10 +47,7 @@
 @import 'components/home';
 @import 'components/custom';
 
-@if $duoshuo {
 @import 'components/duoshuo';
-}
-
 
 // Layout.
 
