@@ -10,8 +10,11 @@
 @import 'libs/skel';
 @import '_FontAwesome/font-awesome';
 @import 'components/fonts';
+
+// mixins
+@import 'mixins/duoshuo';
+
 // 3Party Libs
-@import 'highlight/vars';
 @import 'highlight/tomorrow';
 
 // Base.
@@ -47,8 +50,9 @@
 @import 'components/home';
 @import 'components/custom';
 
-@import 'components/duoshuo';
-
+@if $duoshuo {
+	@include duoshuo;
+}
 // Layout.
 
 @import 'layout/header';
