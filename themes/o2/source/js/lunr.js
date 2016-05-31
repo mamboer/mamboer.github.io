@@ -195,11 +195,21 @@ lunr.EventEmitter.prototype.hasHandler = function (name) {
  * @see lunr.tokenizer.seperator
  * @returns {Array}
  */
+if(typeof module !== 'undefined' && module.exports){
+  nodejieba_segment = require("nodejieba")
+}
 lunr.tokenizer = function (obj) {
   if (!arguments.length || obj == null || obj == undefined) return []
   if (Array.isArray(obj)) return obj.map(function (t) { return lunr.utils.asString(t).toLowerCase() })
 
-  return obj.toString().trim().toLowerCase().split(lunr.tokenizer.seperator)
+  var str = obj.toString().trim().toLowerCase()
+
+  if(typeof nodejieba_segment !== "undefined"){
+    return nodejieba_segment.cut(str, true);
+  }else{
+    return str
+      .split(lunr.tokenizer.seperator)
+  }
 }
 
 /**
@@ -1826,7 +1836,9 @@ lunr.Pipeline.registerFunction(lunr.stopWordFilter, 'stopWordFilter')
  * @see lunr.Pipeline
  */
 lunr.trimmer = function (token) {
-  return token.replace(/^\W+/, '').replace(/\W+$/, '')
+  var result = token.replace(/^\s+/, '')
+                    .replace(/\s+$/, '')
+  return result === '' ? undefined : result
 }
 
 lunr.Pipeline.registerFunction(lunr.trimmer, 'trimmer')

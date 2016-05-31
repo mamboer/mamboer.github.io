@@ -1,5 +1,7 @@
 # faso.me
 
+> hexo目前还不兼容node v6.x.x
+
 ## changelogs
 
 ### v1.0.3 - 排版优化＋置顶功能

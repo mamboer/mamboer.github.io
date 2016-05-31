@@ -98,6 +98,7 @@ node_sass:
 # lunr
 lunr:
   field: all
+  fulltext: false
   path: assets/lunr/
 
 # Deployment
