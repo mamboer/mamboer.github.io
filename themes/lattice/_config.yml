@@ -1,0 +1,32 @@
+logo:
+  url: img/logo.png
+
+post:
+  cover: post-default.png
+  img_dir: img/post/
+  raw_link: https://github.com/mamboer/mamboer.github.io/edit/master/source/
+
+header_menu:
+  exceptions:
+    - https://cases.aotu.io
+
+# baidu push
+baidu_push: true
+
+# Code Highlight theme
+# Available value:
+#    normal | night | eighties | blue | bright
+# https://github.com/chriskempson/tomorrow-theme
+highlight_theme: normal
+
+# Gitalk
+# you can visit https://github.com/gitalk/gitalk for more details
+gitalk:
+  owner: mamboer
+  repo: mamboer.github.io
+  client_id: 64d04f4842c4182c6870
+  client_secret: 49b976677db914b82cbc92d821ed38366e278033
+
+# Wechat
+wechat:
+  desc: "海海人生，无折腾不为乐。"
